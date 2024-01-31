@@ -2,7 +2,6 @@
   "name": "mobile-catalog",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://roman-nikitenko.github.io/phone-oasis/",
   "type": "module",
   "scripts": {
     "dev": "vite",
