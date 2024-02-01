@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {createHashRouter, Navigate, RouterProvider} from 'react-router-dom';
+import {createHashRouter, RouterProvider} from 'react-router-dom';
 import App from './App.tsx';
 import {HomePage} from "./pages/HomePage.tsx";
 import {PhonesPage} from "./pages/PhonesPage.tsx";
@@ -10,16 +10,18 @@ import {ProductItemPage} from "./pages/ProductItemPage.tsx";
 import {FavouritesPage} from "./pages/FavouritesPage.tsx";
 import {CartPage} from "./pages/CartPage.tsx";
 import './index.css';
+import { ErrorPage } from './pages/ErrorPage.tsx';
 
 const router = createHashRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
-      {index: true, element: <Navigate to="/home" replace /> },
       {
-        path: 'home',
+        path: '/',
         element: <HomePage />,
+        index: true,
       },
       {
         path: 'phones',
