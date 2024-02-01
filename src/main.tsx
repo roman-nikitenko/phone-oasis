@@ -11,11 +11,10 @@ import {FavouritesPage} from "./pages/FavouritesPage.tsx";
 import {CartPage} from "./pages/CartPage.tsx";
 import './index.css';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <App />,
-
     children: [
       {index: true, element: <Navigate to="/home" replace /> },
       {
@@ -51,7 +50,7 @@ const router = createBrowserRouter([
         element: <CartPage />,
       },
     ],
-  }
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
