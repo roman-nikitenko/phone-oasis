@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {createBrowserRouter, Navigate, RouterProvider} from 'react-router-dom';
+import {createHashRouter, Navigate, RouterProvider} from 'react-router-dom';
 import App from './App.tsx';
 import {HomePage} from "./pages/HomePage.tsx";
 import {PhonesPage} from "./pages/PhonesPage.tsx";
