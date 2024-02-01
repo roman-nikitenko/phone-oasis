@@ -38,10 +38,6 @@
   }
 }
 
-.container {
-  @apply px-[152px]
-}
-
 .uppercase {
   text-transform: uppercase;
   font-weight: 700;
@@ -55,4 +51,8 @@
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0;
+}
+
+.is-Active {
+  @apply text-Primary transition-colors
 }

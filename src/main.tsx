@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {createHashRouter, RouterProvider} from 'react-router-dom';
 import App from './App.tsx';
+import {createHashRouter, RouterProvider} from 'react-router-dom';
 import {HomePage} from "./pages/HomePage.tsx";
 import {PhonesPage} from "./pages/PhonesPage.tsx";
 import {TabletsPage} from "./pages/TabletsPage.tsx";
@@ -9,8 +9,11 @@ import {AccessoriesPage} from "./pages/AccessoriesPage.tsx";
 import {ProductItemPage} from "./pages/ProductItemPage.tsx";
 import {FavouritesPage} from "./pages/FavouritesPage.tsx";
 import {CartPage} from "./pages/CartPage.tsx";
-import './index.css';
 import { ErrorPage } from './pages/ErrorPage.tsx';
+import { ContactsPage } from './pages/ContactsPage.tsx';
+import { GithubPage } from './pages/GithubPage.tsx';
+import { RightsPage } from './pages/RightsPage.tsx';
+import './index.css';
 
 const router = createHashRouter([
   {
@@ -50,6 +53,18 @@ const router = createHashRouter([
       {
         path: 'cart',
         element: <CartPage />,
+      },
+      {
+        path: 'contacts',
+        element: <ContactsPage />,
+      },
+      {
+        path: 'github',
+        element: <GithubPage />,
+      },
+      {
+        path: 'rights',
+        element: <RightsPage />,
       },
     ],
   },
