@@ -2,10 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.main-button {
-  @apply w-full border text-amber-200
-}
-
-.container {
-  @apply px-2.5 md:p-1.5 xl:w-full
-}

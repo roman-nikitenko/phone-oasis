@@ -6,7 +6,6 @@ function App() {
 
   return (
     <>
-      <button className="main-button sm:w-[275px] flex items-center justify-center">Hello</button>
       <Header />
       <Outlet />
       <Footer />
