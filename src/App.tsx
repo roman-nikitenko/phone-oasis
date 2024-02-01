@@ -1,12 +1,13 @@
 import { Outlet } from 'react-router';
-import { Navigation } from './components/Navigation.tsx';
-import { Footer } from './components/Footer.tsx';
+import { Header } from './components/Header/Header.tsx';
+import { Footer } from './components/Footer/Footer.tsx';
 
 function App() {
 
   return (
     <>
-      <Navigation />
+      <button className="main-button sm:w-[275px] flex items-center justify-center">Hello</button>
+      <Header />
       <Outlet />
       <Footer />
     </>
