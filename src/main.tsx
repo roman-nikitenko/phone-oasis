@@ -24,7 +24,6 @@ const router = createHashRouter([
       {
         path: '/',
         element: <HomePage />,
-        index: true,
       },
       {
         path: 'phones',
