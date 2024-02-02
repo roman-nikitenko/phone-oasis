@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import {HomePage} from "./pages/HomePage.tsx";
 // import {PhonesPage} from "./pages/PhonesPage.tsx";
 // import {TabletsPage} from "./pages/TabletsPage.tsx";
@@ -18,6 +18,7 @@ import { HomePage } from './pages/HomePage.tsx';
 import { PhonesPage } from './pages/PhonesPage.tsx';
 import { TabletsPage } from './pages/TabletsPage.tsx';
 import { AccessoriesPage } from './pages/AccessoriesPage.tsx';
+import { ErrorPage } from './pages/ErrorPage.tsx';
 
 // const router = createHashRouter([
 //   {
@@ -77,7 +78,7 @@ import { AccessoriesPage } from './pages/AccessoriesPage.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}  >
           <Route index element={<HomePage />} />
@@ -85,7 +86,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/tablets" element={<TabletsPage />} />
           <Route path="/accessories" element={<AccessoriesPage />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>,
 )
