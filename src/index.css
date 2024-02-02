@@ -56,3 +56,7 @@
 .is-Active {
   @apply text-Primary transition-colors
 }
+
+.is-Active-nav {
+  @apply border-b-[3px] border-black text-Primary transition-colors
+}
