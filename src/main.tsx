@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import { RouterProvider, createHashRouter} from 'react-router-dom';
+import { RouterProvider, createHashRouter, Navigate } from 'react-router-dom';
 import {HomePage} from "./pages/HomePage.tsx";
 import {PhonesPage} from "./pages/PhonesPage.tsx";
 import {TabletsPage} from "./pages/TabletsPage.tsx";
@@ -21,6 +21,7 @@ const router = createHashRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {index: true, element: <Navigate to="/" replace /> },
       {
         path: '/',
         element: <HomePage />,
