@@ -9,7 +9,7 @@ import {AccessoriesPage} from "./pages/AccessoriesPage.tsx";
 import {ProductItemPage} from "./pages/ProductItemPage.tsx";
 import {FavouritesPage} from "./pages/FavouritesPage.tsx";
 import {CartPage} from "./pages/CartPage.tsx";
-import { ErrorPage } from './pages/ErrorPage.tsx';
+// import { ErrorPage } from './pages/ErrorPage.tsx';
 import { ContactsPage } from './pages/ContactsPage.tsx';
 import { GithubPage } from './pages/GithubPage.tsx';
 import { RightsPage } from './pages/RightsPage.tsx';
@@ -19,11 +19,11 @@ const router = createHashRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
     children: [
-      {index: true, element: <Navigate to="/" replace /> },
+      {index: true, element: <Navigate to="/home" replace /> },
       {
-        path: '/',
+        path: 'home',
         element: <HomePage />,
       },
       {
