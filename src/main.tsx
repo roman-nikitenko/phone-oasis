@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import {createHashRouter, RouterProvider} from 'react-router-dom';
+import { RouterProvider, createBrowserRouter} from 'react-router-dom';
 import {HomePage} from "./pages/HomePage.tsx";
 import {PhonesPage} from "./pages/PhonesPage.tsx";
 import {TabletsPage} from "./pages/TabletsPage.tsx";
@@ -15,7 +15,7 @@ import { GithubPage } from './pages/GithubPage.tsx';
 import { RightsPage } from './pages/RightsPage.tsx';
 import './index.css';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
