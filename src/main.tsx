@@ -21,9 +21,9 @@ const router = createHashRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      {index: true, element: <Navigate to="/" replace /> },
+      {index: true, element: <Navigate to="/home" replace /> },
       {
-        path: '/',
+        path: 'home',
         element: <HomePage />,
       },
       {
