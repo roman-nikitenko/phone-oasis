@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 export const Navigation: React.FC = () => {
-  const getNavigationLink = ({ isActive }: { isActive: boolean }) =>
+  const getNavigationLink = ({ isActive }: { isActive: boolean }): string =>
     classNames(
       'uppercase border-b-[3px] border-transparent text-Secondary hover:text-Primary pt-[27px] pb-[23px]',
       { 'is-Active-nav': isActive }
