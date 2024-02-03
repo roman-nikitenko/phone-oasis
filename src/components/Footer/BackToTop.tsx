@@ -4,7 +4,7 @@ export const BackToTop: React.FC = () => {
   return (
     <div className=" items-center gap-[16px] hidden sm:flex">
       <span className="small-text text-Secondary">Back to top</span>
-      <div className="flex justify-center items-center border border-Icons w-[32px] h-[32px]">
+      <div className="flex justify-center items-center border border-Icons transition-colors hover:border-Primary cursor-pointer w-[32px] h-[32px]">
         <svg
           width="16"
           height="16"
