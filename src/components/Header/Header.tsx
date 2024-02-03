@@ -1,9 +1,9 @@
 import React from 'react';
-import { Logo } from 'components/Logo/Logo.tsx';
+import { Logo } from '../Logo/Logo.tsx';
 import { Navigation } from './Navigation.tsx';
 import { Icon } from './Icon.tsx';
-import basket from 'assets/cart.svg';
-import like from 'assets/like.svg';
+import basket from '../../assets/cart.svg';
+import like from '../../assets/like.svg';
 
 export const Header: React.FC = () => {
   return (

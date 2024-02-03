@@ -1,9 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Navigate, RouterProvider } from 'react-router';
+import { RouterProvider } from 'react-router';
 import { createHashRouter } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
+import { HomePage } from './pages/HomePage.tsx';
+import { ErrorPage } from './pages/ErrorPage.tsx';
+import { PhonesPage } from './pages/PhonesPage.tsx';
+import { ProductItemPage } from './pages/ProductItemPage.tsx';
+import { TabletsPage } from './pages/TabletsPage.tsx';
+import { AccessoriesPage } from './pages/AccessoriesPage.tsx';
+import { FavouritesPage } from './pages/FavouritesPage.tsx';
+import { CartPage } from './pages/CartPage.tsx';
+import { ContactsPage } from './pages/ContactsPage.tsx';
+import { GithubPage } from './pages/GithubPage.tsx';
+import { RightsPage } from './pages/RightsPage.tsx';
 
 const router = createHashRouter([
   {
@@ -11,9 +22,8 @@ const router = createHashRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Navigate to="/home" replace /> },
       {
-        path: 'home',
+        path: '/',
         element: <HomePage />,
         index: true,
       },
