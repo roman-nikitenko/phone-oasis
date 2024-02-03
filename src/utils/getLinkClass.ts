@@ -1,5 +1,6 @@
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 
-export const getLinkClass = ({ isActive }: { isActive: boolean }) => classNames('uppercase text-Secondary hover:text-Primary', {
-  'is-Active': isActive
-})
+export const getLinkClass = ({ isActive }: { isActive: boolean }) =>
+  classNames('uppercase text-Secondary hover:text-Primary', {
+    'is-Active': isActive,
+  });
