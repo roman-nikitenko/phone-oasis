@@ -15,6 +15,7 @@ import { CartPage } from './pages/CartPage.tsx';
 import { ContactsPage } from './pages/ContactsPage.tsx';
 import { GithubPage } from './pages/GithubPage.tsx';
 import { RightsPage } from './pages/RightsPage.tsx';
+import { ThemeProvider } from '@material-tailwind/react';
 
 const router = createHashRouter([
   {
@@ -73,6 +74,8 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );
