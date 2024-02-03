@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 // import {HomePage} from "./pages/HomePage.tsx";
 // import {PhonesPage} from "./pages/PhonesPage.tsx";
 // import {TabletsPage} from "./pages/TabletsPage.tsx";
@@ -78,7 +78,7 @@ import { ErrorPage } from './pages/ErrorPage.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<App />}  >
           <Route index element={<HomePage />} />
@@ -88,6 +88,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 )
