@@ -4,7 +4,7 @@ import { RouterProvider } from 'react-router';
 import { createHashRouter } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
-import { HomePage } from './pages/HomePage.tsx';
+import { HomePage } from 'pages/HomePage.tsx';
 import { ErrorPage } from './pages/ErrorPage.tsx';
 import { PhonesPage } from './pages/PhonesPage.tsx';
 import { ProductItemPage } from './pages/ProductItemPage.tsx';
