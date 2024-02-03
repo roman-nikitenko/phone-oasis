@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo } from '../Logo/Logo.tsx';
+import { Logo } from 'components/Logo/Logo.tsx';
 import { FooterNav } from './FooterNav.tsx';
 import { BackToTop } from './BackToTop.tsx';
 
