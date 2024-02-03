@@ -16,6 +16,10 @@ import { GithubPage } from 'pages/GithubPage.tsx';
 import { RightsPage } from 'pages/RightsPage.tsx';
 import './index.css';
 
+import { ThemeProvider } from '@material-tailwind/react';
+
+
+
 const router = createHashRouter([
   {
     path: '/',
@@ -73,6 +77,8 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );
