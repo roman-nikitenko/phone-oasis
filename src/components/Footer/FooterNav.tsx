@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { getLinkClass } from '../../utils/getLinkClass.ts';
+import { getLinkClass } from 'utils/getLinkClass.ts';
 
 export const FooterNav: React.FC = () => (
   <div>
