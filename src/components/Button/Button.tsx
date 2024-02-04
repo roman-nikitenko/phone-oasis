@@ -7,6 +7,7 @@ type Props = {
   disabledIconSrc?: string;
   className?: string;
   isDisabled?: boolean;
+  onClick: () => void;
 };
 
 export const Button: React.FC<Props> = ({
@@ -15,6 +16,7 @@ export const Button: React.FC<Props> = ({
   className,
   isDisabled,
   disabledIconSrc,
+  onClick,
 }) => {
   const getButtonClassNames = (): string =>
     classNames(
@@ -27,7 +29,7 @@ export const Button: React.FC<Props> = ({
     );
 
   return (
-    <button className={getButtonClassNames()} disabled={isDisabled}>
+    <button className={getButtonClassNames()} onClick={onClick} disabled={isDisabled}>
       {text && text}
       {iconSrc && (
         <img src={disabledIconSrc && isDisabled ? disabledIconSrc : iconSrc} alt="icon" />
