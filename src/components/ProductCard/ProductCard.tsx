@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'components/Button/Button.tsx';
 import LikeIcon from 'assets/like.svg';
 import LikeIconFilled from 'assets/like-filled.svg';
@@ -19,9 +20,11 @@ export const ProductCard: React.FC<Props> = ({ isForSale, isFavourite }) => {
     <div className="p-[24px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px]">
       <img src={phone} alt="product photo" />
       <div>
-        <p className="pb-[7px] font-medium text-Primary">
-          Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
-        </p>
+        <Link to={`/phones/${'Apple-iPhone-Xs-64GB-Silver'.toLowerCase()}`}>
+          <p className="pb-[7px] font-medium text-Primary hover:text-Secondary">
+            Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+          </p>
+        </Link>
         <div className="pb-[5px] flex gap-[8px]">
           <h2>$799</h2>
           {isForSale && <h2 className="font-medium text-Secondary line-through">$899</h2>}

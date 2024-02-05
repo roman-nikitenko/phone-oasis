@@ -19,8 +19,6 @@ import './index.css';
 import { ThemeProvider } from '@material-tailwind/react';
 import { BasketPage } from './pages/BasketPage.tsx';
 
-
-
 const router = createHashRouter([
   {
     path: '/',
@@ -37,7 +35,7 @@ const router = createHashRouter([
         element: <PhonesPage />,
       },
       {
-        path: 'phones/:id',
+        path: 'phones/:phoneName',
         element: <ProductItemPage />,
       },
       {
