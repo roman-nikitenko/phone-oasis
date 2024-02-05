@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'components/Button/Button.tsx';
 import LikeIcon from 'assets/like.svg';
 import LikeIconFilled from 'assets/like-filled.svg';
+import phone from 'assets/phone1.png';
 
 type Props = {
   // product: {};
@@ -16,7 +17,7 @@ export const ProductCard: React.FC<Props> = ({ isForSale, isFavourite }) => {
 
   return (
     <div className="p-[24px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px]">
-      <img src="" alt="product photo" />
+      <img src={phone} alt="product photo" />
       <div>
         <p className="pb-[7px] font-medium text-Primary">
           Apple iPhone Xs 64GB Silver (iMT9G2FS/A)

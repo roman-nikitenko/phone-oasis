@@ -17,6 +17,7 @@ import { RightsPage } from 'pages/RightsPage.tsx';
 import './index.css';
 
 import { ThemeProvider } from '@material-tailwind/react';
+import { BasketPage } from './pages/BasketPage.tsx';
 
 
 
@@ -70,6 +71,10 @@ const router = createHashRouter([
       {
         path: 'rights',
         element: <RightsPage />,
+      },
+      {
+        path: 'basket',
+        element: <BasketPage />,
       },
     ],
   },

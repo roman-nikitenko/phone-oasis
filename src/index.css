@@ -57,5 +57,5 @@
 }
 
 .is-Active-nav {
-  @apply border-b-[3px] border-black text-Primary transition-colors
+  @apply before:border before:border-black before:h-[3px] before:bg-Primary before:w-full before:absolute before:bottom-[0px]
 }

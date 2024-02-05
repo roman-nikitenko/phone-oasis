@@ -5,7 +5,7 @@ import classNames from 'classnames';
 export const Navigation: React.FC = () => {
   const getNavigationLink = ({ isActive }: { isActive: boolean }): string =>
     classNames(
-      'uppercase border-b-[3px] border-transparent text-Secondary hover:text-Primary pt-[27px] pb-[23px]',
+      'uppercase text-Secondary relative hover:text-Primary pt-[27px] pb-[26px]',
       { 'is-Active-nav': isActive }
     );
 
@@ -13,7 +13,7 @@ export const Navigation: React.FC = () => {
     <div className="">
       <ul className="flex gap-[64px]">
         <NavLink className={getNavigationLink} to="/">
-          <li className="">home</li>
+          home
         </NavLink>
 
         <NavLink className={getNavigationLink} to="/phones">
