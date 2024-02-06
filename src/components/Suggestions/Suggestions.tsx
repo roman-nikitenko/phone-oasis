@@ -1,19 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ProductCard } from 'components/ProductCard/ProductCard.tsx';
 import { Button } from 'components/Button/Button.tsx';
 import ArrowLeftDisabled from 'assets/arrow-left.svg';
 import ArrowRightDisabled from 'assets/arrow-right.svg';
 import ArrowLeft from 'assets/arrow-left-darkgrey.svg';
 import ArrowRight from 'assets/arrow-right-darkgrey.svg';
+import { Phones } from '../../types/phones.ts';
 
 type Props = {
   title: string;
+  phones: Phones[];
 };
 
-export const Suggestions: React.FC<Props> = ({ title }) => {
-  const handleLeftClick = (): void => {};
+export const Suggestions: React.FC<Props> = ({ title, phones }) => {
+  const [offset, setOffset] = useState(0);
+  const [isLeftButton, setIsLeftButton] = useState(true);
+  const [isRightButton, setIsRightButton] = useState(false);
 
-  const handleRightClick = (): void => {};
+  const step = 288;
+  const maxElements = -(phones.length - 4) * step;
+
+  const handleLeftClick = (): void => {
+    setOffset((prevState) => prevState + step);
+  };
+
+  const handleRightClick = (): void => {
+    setOffset((prevState) => prevState - step);
+  };
+
+  useEffect((): void => {
+    if (offset < 0) {
+      setIsLeftButton(false);
+    } else {
+      setIsLeftButton(true);
+    }
+
+    if (offset === maxElements) {
+      setIsRightButton(true);
+    } else {
+      setIsRightButton(false);
+    }
+  }, [offset]);
 
   return (
     <div>
@@ -23,22 +50,25 @@ export const Suggestions: React.FC<Props> = ({ title }) => {
           <Button
             iconSrc={ArrowLeft}
             disabledIconSrc={ArrowLeftDisabled}
-            isDisabled={true}
+            isDisabled={isLeftButton}
             onClick={handleLeftClick}
           />
           <Button
             iconSrc={ArrowRight}
             disabledIconSrc={ArrowRightDisabled}
-            isDisabled={false}
+            isDisabled={isRightButton}
             onClick={handleRightClick}
           />
         </div>
       </div>
-      <div className="flex justify-center flex-wrap gap-x-[16px] gap-y-[40px]">
-        <ProductCard isForSale={true} isFavourite={false} />
-        <ProductCard isForSale={false} isFavourite={true} />
-        <ProductCard isForSale={false} isFavourite={true} />
-        <ProductCard isForSale={false} isFavourite={true} />
+      <div className="flex gap-x-[16px] gap-y-[40px] w-[1136px] overflow-hidden">
+        {phones.map((phone) => (
+          <ProductCard
+            offset={offset}
+            isForSale={phone.isForSale}
+            isFavourite={phone.isFavourite}
+          />
+        ))}
       </div>
     </div>
   );
