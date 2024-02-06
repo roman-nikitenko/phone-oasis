@@ -9,15 +9,19 @@ type Props = {
   // product: {};
   isForSale?: boolean;
   isFavourite: boolean;
+  offset: number;
 };
 
-export const ProductCard: React.FC<Props> = ({ isForSale, isFavourite }) => {
+export const ProductCard: React.FC<Props> = ({ offset, isForSale, isFavourite }) => {
   const handleAddToCart = (): void => {};
 
   const handleAddToFavourites = (): void => {};
 
   return (
-    <div className="p-[24px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px]">
+    <div
+      className="p-[24px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px] transition duration-700"
+      style={{ transform: `translateX(${offset}px)` }}
+    >
       <img src={phone} alt="product photo" />
       <div>
         <Link to={`/phones/${'Apple-iPhone-Xs-64GB-Silver'.toLowerCase()}`}>
@@ -43,7 +47,7 @@ export const ProductCard: React.FC<Props> = ({ isForSale, isFavourite }) => {
             <span className="text-Primary">4 GB</span>
           </p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex gap-[8px] justify-between">
           <Button text={'Add to cart'} onClick={handleAddToCart} />
           <Button
             iconSrc={isFavourite ? LikeIconFilled : LikeIcon}
