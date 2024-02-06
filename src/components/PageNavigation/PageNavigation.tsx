@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router';
-import { getProductNameFromPath } from 'utils/getProductNameFromPath.ts';
+import { capitalizeFirstLetter, transformProductName } from 'utils/transformProductName.ts';
 import HomeIcon from 'assets/home.svg';
 import ArrowRight from 'assets/arrow-right-darkgrey.svg';
 
@@ -12,7 +12,9 @@ export const PageNavigation: React.FC = () => {
 
   return (
     <div className="flex gap-[8px]">
-      <img src={HomeIcon} alt="home icon" />
+      <Link to="/">
+        <img src={HomeIcon} alt="home icon" />
+      </Link>
       {paths &&
         paths.map(
           (path: string, index: number) =>
@@ -21,11 +23,11 @@ export const PageNavigation: React.FC = () => {
                 <img src={ArrowRight} alt="home icon" height="16px" />
                 {lastElementOfPath !== index ? (
                   <Link to={`/${path}`} className="small-text text-Primary hover:text-Secondary">
-                    {getProductNameFromPath(path)}
+                    {capitalizeFirstLetter(path)}
                   </Link>
                 ) : (
                   <span className="small-text cursor-default text-Secondary">
-                    {getProductNameFromPath(path)}
+                    {transformProductName(path)}
                   </span>
                 )}
               </div>

@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'components/Button/Button.tsx';
+import { Phones } from 'types/phones.ts';
 import LikeIcon from 'assets/like.svg';
 import LikeIconFilled from 'assets/like-filled.svg';
-import phone from 'assets/phone1.png';
+import { transformProductNameIntoPath } from 'utils/transformProductName.ts';
 
 type Props = {
-  // product: {};
-  isForSale?: boolean;
-  isFavourite: boolean;
-  offset: number;
+  product: Phones;
+  offset?: number;
 };
 
-export const ProductCard: React.FC<Props> = ({ offset, isForSale, isFavourite }) => {
+export const ProductCard: React.FC<Props> = ({ product, offset }) => {
+  const path =
+    product.category && `/${product.category}/${transformProductNameIntoPath(product.title)}`;
+
   const handleAddToCart = (): void => {};
 
   const handleAddToFavourites = (): void => {};
@@ -22,16 +24,16 @@ export const ProductCard: React.FC<Props> = ({ offset, isForSale, isFavourite })
       className="p-[24px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px] transition duration-700"
       style={{ transform: `translateX(${offset}px)` }}
     >
-      <img src={phone} alt="product photo" />
+      <img src={product.image} alt="product photo" />
       <div>
-        <Link to={`/phones/${'Apple-iPhone-Xs-64GB-Silver'.toLowerCase()}`}>
-          <p className="pb-[7px] font-medium text-Primary hover:text-Secondary">
-            Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
-          </p>
+        <Link to={path}>
+          <p className="pb-[7px] font-medium text-Primary hover:text-Secondary">{product.title}</p>
         </Link>
         <div className="pb-[5px] flex gap-[8px]">
-          <h2>$799</h2>
-          {isForSale && <h2 className="font-medium text-Secondary line-through">$899</h2>}
+          <h2>{product.forSalePrice}</h2>
+          {product.isForSale && (
+            <h2 className="font-medium text-Secondary line-through">{product.price}</h2>
+          )}
         </div>
         <div className="py-[16px] flex flex-col gap-[8px] border-t border-Elements">
           <p className="small-text text-Secondary flex justify-between">
@@ -50,7 +52,7 @@ export const ProductCard: React.FC<Props> = ({ offset, isForSale, isFavourite })
         <div className="flex gap-[8px] justify-between">
           <Button text={'Add to cart'} onClick={handleAddToCart} />
           <Button
-            iconSrc={isFavourite ? LikeIconFilled : LikeIcon}
+            iconSrc={product.isFavourite ? LikeIconFilled : LikeIcon}
             className="w-[40px] h-[40px]"
             onClick={handleAddToFavourites}
           />
