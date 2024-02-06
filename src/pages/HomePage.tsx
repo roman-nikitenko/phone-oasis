@@ -15,7 +15,7 @@ export const phones: Phones[] = [
     isForSale: false,
     price: '$899',
     forSalePrice: '$799',
-    image: 'assets/phones/image1.jpeg',
+    image: 'src/assets/phones/image1.jpeg',
   },
   {
     title: 'Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)',
@@ -24,7 +24,7 @@ export const phones: Phones[] = [
     isForSale: true,
     price: '$899',
     forSalePrice: '$799',
-    image: 'assets/phones/image2.jpeg',
+    image: 'src/assets/phones/image2.jpeg',
   },
   {
     title: 'Apple iPhone 11 128GB Purple (iMT9G2FS/A)',
@@ -33,7 +33,7 @@ export const phones: Phones[] = [
     isForSale: false,
     price: '$899',
     forSalePrice: '$799',
-    image: 'assets/phones/image3.jpeg',
+    image: 'src/assets/phones/image3.jpeg',
   },
   {
     title: 'Apple iPhone X 256GB Silver (iMT9G2FS/A)',
@@ -42,7 +42,7 @@ export const phones: Phones[] = [
     isForSale: true,
     price: '$899',
     forSalePrice: '$799',
-    image: 'assets/phones/image4.jpeg',
+    image: 'src/assets/phones/image4.jpeg',
   },
   {
     title: 'Apple iPhone 11 Pro Max 512GB Midnight Green (iMT9G2FS/A)',
@@ -51,7 +51,7 @@ export const phones: Phones[] = [
     isForSale: false,
     price: '$899',
     forSalePrice: '$799',
-    image: 'assets/phones/image5.jpeg',
+    image: 'src/assets/phones/image5.jpeg',
   },
   {
     title: 'Apple iPhone 11 256GB Purple (iMT9G2FS/A)',
@@ -60,7 +60,7 @@ export const phones: Phones[] = [
     isForSale: true,
     price: '$899',
     forSalePrice: '$799',
-    image: 'assets/phones/image6.jpeg',
+    image: 'src/assets/phones/image6.jpeg',
   },
   {
     title: 'Apple iPhone 11 Pro Max 512GB Midnight Green (iMT9G2FS/A)',
@@ -69,7 +69,7 @@ export const phones: Phones[] = [
     isForSale: true,
     price: '$899',
     forSalePrice: '$799',
-    image: 'assets/phones/image7.jpeg',
+    image: 'src/assets/phones/image7.jpeg',
   },
 ];
 
