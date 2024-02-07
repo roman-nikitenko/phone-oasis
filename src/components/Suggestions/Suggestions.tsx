@@ -5,7 +5,7 @@ import ArrowLeftDisabled from 'assets/arrow-left.svg';
 import ArrowRightDisabled from 'assets/arrow-right.svg';
 import ArrowLeft from 'assets/arrow-left-darkgrey.svg';
 import ArrowRight from 'assets/arrow-right-darkgrey.svg';
-import { Phones } from '../../types/phones.ts';
+import { Phones } from 'types/phones.ts';
 
 type Props = {
   title: string;
@@ -61,9 +61,9 @@ export const Suggestions: React.FC<Props> = ({ title, phones }) => {
           />
         </div>
       </div>
-      <div className="flex gap-x-[16px] gap-y-[40px] touch-pan-right w-[1136px] overflow-hidden">
-        {phones.map((phone) => (
-          <ProductCard key={phone.id} offset={offset} phone={phone} />
+      <div className="flex gap-x-[16px] gap-y-[40px] w-[1136px] overflow-hidden">
+        {phones.map((phone: Phones) => (
+          <ProductCard product={phone} offset={offset} />
         ))}
       </div>
     </div>

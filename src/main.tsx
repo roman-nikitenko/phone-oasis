@@ -2,24 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 import { createHashRouter } from 'react-router-dom';
+import { ThemeProvider } from '@material-tailwind/react';
 import App from './App.tsx';
 import { HomePage } from 'pages/HomePage.tsx';
 import { ErrorPage } from 'pages/ErrorPage.tsx';
-import { PhonesPage } from 'pages/PhonesPage.tsx';
+import { ProductsPage } from 'pages/ProductsPage.tsx';
 import { ProductItemPage } from 'pages/ProductItemPage.tsx';
-import { TabletsPage } from 'pages/TabletsPage.tsx';
-import { AccessoriesPage } from 'pages/AccessoriesPage.tsx';
 import { FavouritesPage } from 'pages/FavouritesPage.tsx';
-import { CartPage } from 'pages/CartPage.tsx';
+import { BasketPage } from 'pages/BasketPage.tsx';
 import { ContactsPage } from 'pages/ContactsPage.tsx';
 import { GithubPage } from 'pages/GithubPage.tsx';
 import { RightsPage } from 'pages/RightsPage.tsx';
 import './index.css';
 
+
 import { ThemeProvider } from '@material-tailwind/react';
 import { BasketPage } from './pages/BasketPage.tsx';
 import { Provider } from 'react-redux';
 import { store } from './store/store.ts';
+
+
 
 const router = createHashRouter([
   {
@@ -34,31 +36,31 @@ const router = createHashRouter([
       },
       {
         path: 'phones',
-        element: <PhonesPage />,
+        element: <ProductsPage />,
       },
       {
-        path: 'phones/:id',
+        path: 'phones/:phoneName',
         element: <ProductItemPage />,
       },
       {
         path: 'tablets',
-        element: <TabletsPage />,
+        element: <ProductsPage />,
       },
       {
-        path: 'tablets/:id',
+        path: 'tablets/:tabletName',
         element: <ProductItemPage />,
       },
       {
         path: 'accessories',
-        element: <AccessoriesPage />,
+        element: <ProductsPage />,
+      },
+      {
+        path: 'accessories/:accessoryName',
+        element: <ProductItemPage />,
       },
       {
         path: 'favourites',
         element: <FavouritesPage />,
-      },
-      {
-        path: 'cart',
-        element: <CartPage />,
       },
       {
         path: 'contacts',
