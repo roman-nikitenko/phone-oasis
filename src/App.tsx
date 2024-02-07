@@ -4,9 +4,11 @@ import { Footer } from 'components/Footer/Footer.tsx';
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="min-h-screen relative">
       <Header />
-      <Outlet />
+      <div className="pb-20">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

@@ -6,6 +6,11 @@
   html {
     font-family: 'Montserrat', sans-serif;
   }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
   h1 {
     font-weight: 700;
     font-size: 32px;
@@ -58,4 +63,8 @@
 
 .is-Active-nav {
   @apply before:border before:border-black before:h-[3px] before:bg-Primary before:w-full before:absolute before:bottom-[0px]
+}
+
+.marker {
+  @apply before:absolute before:-inset-1 before:bg-Red before:rounded-full before:w-[14px] before:h-[14px] before:border-white before:border before:left-[32px] before:top-[18px] before:text-[9px] before:text-center before:text-white
 }

@@ -13,15 +13,6 @@ type Props = {
   offset?: number;
 };
 
-// export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
-//   const { isFavourite, isForSale, image, id, title, price } = phone;
-//
-//
-// type Props = {
-//   product: Phones;
-//   offset?: number;
-// };
-
 export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
   const { isFavourite, isForSale, image, id, title, price, category, forSalePrice } = phone;
   const path = category && `/${category}/${transformProductNameIntoPath(title)}`;
