@@ -30,9 +30,9 @@ export const ProductCard: React.FC<Props> = ({ product, offset }) => {
           <p className="pb-[7px] font-medium text-Primary hover:text-Secondary">{product.title}</p>
         </Link>
         <div className="pb-[5px] flex gap-[8px]">
-          <h2>{product.forSalePrice}</h2>
+          <h2>{product.price}</h2>
           {product.isForSale && (
-            <h2 className="font-medium text-Secondary line-through">{product.price}</h2>
+            <h2 className="font-medium text-Secondary line-through">{product.forSalePrice}</h2>
           )}
         </div>
         <div className="py-[16px] flex flex-col gap-[8px] border-t border-Elements">
