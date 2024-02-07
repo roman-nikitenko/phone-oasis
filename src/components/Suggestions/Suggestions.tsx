@@ -61,13 +61,9 @@ export const Suggestions: React.FC<Props> = ({ title, phones }) => {
           />
         </div>
       </div>
-      <div className="flex gap-x-[16px] gap-y-[40px] w-[1136px] overflow-hidden">
+      <div className="flex gap-x-[16px] gap-y-[40px] touch-pan-right w-[1136px] overflow-hidden">
         {phones.map((phone) => (
-          <ProductCard
-            offset={offset}
-            isForSale={phone.isForSale}
-            isFavourite={phone.isFavourite}
-          />
+          <ProductCard key={phone.id} offset={offset} phone={phone} />
         ))}
       </div>
     </div>

@@ -2,30 +2,33 @@ import React from 'react';
 import { Button } from 'components/Button/Button.tsx';
 import LikeIcon from 'assets/like.svg';
 import LikeIconFilled from 'assets/like-filled.svg';
-import phone from 'assets/phone1.png';
+import { useAppDispatch } from '../../hooks/hooks.ts';
+import { actions } from '../../store/phonesSlice.ts';
+import { Phones } from '../../types/phones.ts';
 
 type Props = {
-  // product: {};
-  isForSale?: boolean;
-  isFavourite: boolean;
-  offset: number;
+  phone: Phones;
+  offset?: number;
 };
 
-export const ProductCard: React.FC<Props> = ({ offset, isForSale, isFavourite }) => {
+export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
+  const { isFavourite, isForSale, image, id, title } = phone;
+  const dispatch = useAppDispatch();
+
   const handleAddToCart = (): void => {};
 
-  const handleAddToFavourites = (): void => {};
+  const handleAddToFavourites = (): void => {
+    dispatch(actions.addFavorite(id));
+  };
 
   return (
     <div
       className="p-[24px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px] transition duration-700"
       style={{ transform: `translateX(${offset}px)` }}
     >
-      <img src={phone} alt="product photo" />
+      <img src={image} alt="product photo" />
       <div>
-        <p className="pb-[7px] font-medium text-Primary">
-          Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
-        </p>
+        <p className="pb-[7px] font-medium text-Primary">{title}</p>
         <div className="pb-[5px] flex gap-[8px]">
           <h2>$799</h2>
           {isForSale && <h2 className="font-medium text-Secondary line-through">$899</h2>}
