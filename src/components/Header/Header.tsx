@@ -6,10 +6,13 @@ import basket from 'assets/cart.svg';
 import like from 'assets/like.svg';
 import { useLocation } from 'react-router';
 import { SearchBar } from './SearchBar.tsx';
+import { useAppSelector } from '../../hooks/hooks.ts';
 
 export const Header: React.FC = () => {
   const location = useLocation();
   const isNotHome = location.pathname !== '/' && true;
+  const phones = useAppSelector((state) => state.phones)
+  const favoriteQuantity = phones.filter((p) => p.isFavourite);
 
   return (
     <div className="h-[64px] flex items-center pl-[24px] justify-between relative border-b border-Elements">
@@ -20,11 +23,9 @@ export const Header: React.FC = () => {
         </div>
       </div>
       <div className="flex">
-        { isNotHome && <SearchBar /> }
-
-          <Icon image={like} link="favourites" />
-          <Icon image={basket} link="basket" />
-
+        {isNotHome && <SearchBar />}
+        <Icon quantity={+favoriteQuantity.length} image={like} link="favourites" />
+        <Icon quantity={0} image={basket} link="basket" />
       </div>
     </div>
   );
