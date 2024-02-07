@@ -14,14 +14,8 @@ import { ContactsPage } from 'pages/ContactsPage.tsx';
 import { GithubPage } from 'pages/GithubPage.tsx';
 import { RightsPage } from 'pages/RightsPage.tsx';
 import './index.css';
-
-
-import { ThemeProvider } from '@material-tailwind/react';
-import { BasketPage } from './pages/BasketPage.tsx';
 import { Provider } from 'react-redux';
 import { store } from './store/store.ts';
-
-
 
 const router = createHashRouter([
   {

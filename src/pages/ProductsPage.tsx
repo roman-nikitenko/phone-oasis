@@ -5,9 +5,10 @@ import { PageNavigation } from 'components/PageNavigation/PageNavigation.tsx';
 import { ProductCard } from 'components/ProductCard/ProductCard.tsx';
 import { capitalizeFirstLetter } from 'utils/transformProductName.ts';
 import { Phones } from 'types/phones.ts';
-import { phones } from './HomePage.tsx';
+import { useAppSelector } from '../hooks/hooks.ts';
 
 export const ProductsPage: React.FC = () => {
+  const phones = useAppSelector((state) => state.phones);
   const { pathname } = useLocation();
   const paths: string[] = pathname.split('/');
   const currentPath = paths[1];
@@ -21,7 +22,7 @@ export const ProductsPage: React.FC = () => {
       />
       <div className="flex justify-center flex-wrap gap-x-[16px] gap-y-[40px]">
         {phones.map((phoneItem: Phones) => (
-          <ProductCard product={phoneItem} />
+          <ProductCard phone={phoneItem} />
         ))}
       </div>
     </div>
