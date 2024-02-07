@@ -63,7 +63,7 @@ export const Suggestions: React.FC<Props> = ({ title, phones }) => {
       </div>
       <div className="flex gap-x-[16px] gap-y-[40px] w-[1136px] overflow-hidden">
         {phones.map((phone: Phones) => (
-          <ProductCard product={phone} offset={offset} />
+          <ProductCard phone={phone} offset={offset} />
         ))}
       </div>
     </div>
