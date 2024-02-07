@@ -15,6 +15,14 @@ import { GithubPage } from 'pages/GithubPage.tsx';
 import { RightsPage } from 'pages/RightsPage.tsx';
 import './index.css';
 
+
+import { ThemeProvider } from '@material-tailwind/react';
+import { BasketPage } from './pages/BasketPage.tsx';
+import { Provider } from 'react-redux';
+import { store } from './store/store.ts';
+
+
+
 const router = createHashRouter([
   {
     path: '/',
@@ -77,7 +85,9 @@ const router = createHashRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>
 );

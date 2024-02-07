@@ -5,6 +5,7 @@ import { Categories } from 'components/Categories/Categories.tsx';
 import banner from 'assets/banner.jpeg';
 import tablet from 'assets/tablet.jpg';
 import ipad from 'assets/ipad.jpg';
+import { useAppSelector } from '../hooks/hooks.ts';
 import { Phones } from 'types/phones.ts';
 import Phone1 from 'assets/phones/image1.jpeg';
 import Phone2 from 'assets/phones/image2.jpeg';
@@ -81,6 +82,7 @@ export const phones: Phones[] = [
 ];
 
 export const HomePage: React.FC = () => {
+  const phones = useAppSelector((state) => state.phones);
   const slides = [banner, tablet, ipad];
 
   return (
