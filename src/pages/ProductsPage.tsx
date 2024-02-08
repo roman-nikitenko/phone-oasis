@@ -14,11 +14,11 @@ export const ProductsPage: React.FC = () => {
   const paths: string[] = pathname.split('/');
   const currentPath = paths[1];
 
-  const sortByDate = (value: string): void => {
+  const sortByDate = (value: string | undefined): void => {
     console.log(value);
   };
 
-  const sortByAmount = (value: string): void => {
+  const sortByAmount = (value: string | undefined): void => {
     console.log(value);
   };
 
