@@ -17,7 +17,10 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
   const { isFavourite, isForSale, image, id, title, price, category, forSalePrice } = phone;
   const path = category && `/${category}/${transformProductNameIntoPath(title)}`;
   const dispatch = useAppDispatch();
-  const handleAddToCart = (): void => {};
+
+  const handleAddToCart = (): void => {
+    dispatch(actions.addToBasket(id));
+  };
 
   const handleAddToFavourites = (): void => {
     dispatch(actions.addFavorite(id));

@@ -92,6 +92,13 @@ export const phonesSlice = createSlice({
         }
       });
     },
+    addToBasket: (state, action: PayloadAction<number>) => {
+      state.map((phone) => {
+        if (phone.id === action.payload) {
+          phone.isForSale = !phone.isForSale;
+        }
+      });
+    },
   },
 });
 
