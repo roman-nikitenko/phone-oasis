@@ -68,3 +68,7 @@
 .marker {
   @apply before:absolute before:-inset-1 before:bg-Red before:rounded-full before:w-[14px] before:h-[14px] before:border-white before:border before:left-[32px] before:top-[18px] before:text-[9px] before:text-center before:text-white
 }
+
+.option {
+  @apply rounded-none font-medium text-Secondary bg-White
+}
