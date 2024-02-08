@@ -8,7 +8,7 @@ type Props = {
   selectedValue: string;
   width: string;
   options: string[];
-  onChange: (value: string) => void;
+  onChange: (value: string | undefined) => void;
 };
 
 export const Dropdown: React.FC<Props> = ({
