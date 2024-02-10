@@ -5,7 +5,8 @@ import { Phones } from 'types/phones.ts';
 import LikeIcon from 'assets/like.svg';
 import LikeIconFilled from 'assets/like-filled.svg';
 import { useAppDispatch } from '../../hooks/hooks.ts';
-import { actions } from '../../store/phonesSlice.ts';
+import { actions as phonesActions } from '../../store/phonesSlice.ts';
+import { actions as basketActions } from '../../store/basketSlice.ts';
 import { transformProductNameIntoPath } from 'utils/transformProductName.ts';
 
 type Props = {
@@ -19,11 +20,11 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
   const dispatch = useAppDispatch();
 
   const handleAddToCart = (): void => {
-    dispatch(actions.addToBasket(id));
+    dispatch(basketActions.addToBasket(phone));
   };
 
   const handleAddToFavourites = (): void => {
-    dispatch(actions.addFavorite(id));
+    dispatch(phonesActions.addFavorite(id));
   };
 
   return (
