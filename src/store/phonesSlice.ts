@@ -15,8 +15,8 @@ const initialState: Phones[] = [
     category: 'phones',
     isFavourite: false,
     isForSale: true,
-    price: '$899',
-    forSalePrice: '$799',
+    price: 899,
+    forSalePrice: 799,
     image: Phone1,
   },
   {
@@ -25,8 +25,8 @@ const initialState: Phones[] = [
     category: 'phones',
     isFavourite: false,
     isForSale: true,
-    price: '$1999',
-    forSalePrice: '$1199',
+    price: 1999,
+    forSalePrice: 1199,
     image: Phone2,
   },
   {
@@ -35,8 +35,8 @@ const initialState: Phones[] = [
     category: 'phones',
     isFavourite: true,
     isForSale: true,
-    price: '$899',
-    forSalePrice: '$799',
+    price: 899,
+    forSalePrice: 799,
     image: Phone3,
   },
   {
@@ -45,8 +45,8 @@ const initialState: Phones[] = [
     category: 'phones',
     isFavourite: false,
     isForSale: true,
-    price: '$859',
-    forSalePrice: '$899',
+    price: 859,
+    forSalePrice: 899,
     image: Phone4,
   },
   {
@@ -55,8 +55,8 @@ const initialState: Phones[] = [
     category: 'phones',
     isFavourite: true,
     isForSale: true,
-    price: '$899',
-    forSalePrice: '$799',
+    price: 899,
+    forSalePrice: 799,
     image: Phone5,
   },
   {
@@ -65,7 +65,7 @@ const initialState: Phones[] = [
     category: 'phones',
     isFavourite: false,
     isForSale: false,
-    price: '$899',
+    price: 899,
     forSalePrice: null,
     image: Phone6,
   },
@@ -75,7 +75,7 @@ const initialState: Phones[] = [
     category: 'phones',
     isFavourite: false,
     isForSale: false,
-    price: '$1299',
+    price: 1299,
     forSalePrice: null,
     image: Phone7,
   },
@@ -89,13 +89,6 @@ export const phonesSlice = createSlice({
       state.map((phone) => {
         if (phone.id === action.payload) {
           phone.isFavourite = !phone.isFavourite;
-        }
-      });
-    },
-    addToBasket: (state, action: PayloadAction<number>) => {
-      state.map((phone) => {
-        if (phone.id === action.payload) {
-          phone.isForSale = !phone.isForSale;
         }
       });
     },
