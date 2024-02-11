@@ -8,6 +8,7 @@ import { Pagination } from 'components/Pagination/Pagination.tsx';
 import { capitalizeFirstLetter } from 'utils/transformProductName.ts';
 import { Phones } from 'types/phones.ts';
 import { useAppSelector } from 'hooks/hooks.ts';
+import { ProductCategory } from 'types/common.ts';
 
 export const ProductsPage: React.FC = () => {
   const allProducts = useAppSelector((state) => state.phones);
@@ -34,7 +35,11 @@ export const ProductsPage: React.FC = () => {
     <div className="p-[20px] sm:p-10 lg:px-20 lg:pt-[24px] xl:px-[152px] grid gap-[40px]">
       <PageNavigation />
       <PageTitle
-        title={currentPath === 'phones' ? 'Mobile phones' : capitalizeFirstLetter(currentPath)}
+        title={
+          currentPath === ProductCategory.PHONES
+            ? 'Mobile phones'
+            : capitalizeFirstLetter(currentPath)
+        }
         modelQuantity={95}
       />
       <div className="mt-[20px] max-w-[1440px] mx-auto">
