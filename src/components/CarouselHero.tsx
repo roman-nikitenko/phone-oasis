@@ -12,19 +12,17 @@ export const CarouselHero: React.FC<Props> = ({ slides }) => {
   const prev = () => setCurrent((curr) => (curr === 0 ? slides.length - 1 : curr - 1));
   const next = () => setCurrent((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
-  //[1136px]
-
   return (
     <>
       <div className="max-w-[1136px] w-full">
         <div className="flex items-center mb-[18px] relative ">
-          <div className=" rounded-2xl border overflow-hidden ">
+          <div className=" border overflow-hidden ">
             <div
               className="flex transition duration-700"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               {slides.map((s) => (
-                <img src={s.image} alt="banner" key={s.id} className="" />
+                <img src={s.image} alt="banner" key={s.id} />
               ))}
             </div>
           </div>
@@ -35,7 +33,7 @@ export const CarouselHero: React.FC<Props> = ({ slides }) => {
               color="white"
               size="lg"
               onClick={prev}
-              className=""
+              className="rounded-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +56,7 @@ export const CarouselHero: React.FC<Props> = ({ slides }) => {
               color="white"
               size="lg"
               onClick={next}
-              className=""
+              className="rounded-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
