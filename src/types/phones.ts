@@ -1,9 +1,7 @@
-import { ProductCategory } from './common.ts';
-
 export type Phones = {
   id: number;
   title: string;
-  category: ProductCategory;
+  category: string;
   price: string;
   forSalePrice: string | null;
   isFavourite: boolean;
