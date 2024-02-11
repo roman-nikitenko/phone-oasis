@@ -12,8 +12,9 @@ export const Header: React.FC = () => {
   const location = useLocation();
   const isNotHome = location.pathname !== '/' && true;
   const phones = useAppSelector((state) => state.phones);
+  const basketFromStore = useAppSelector((state) => state.basket);
+  const basketQuantity = basketFromStore.length;
   const favoriteQuantity = phones.filter((p) => p.isFavourite).length;
-  const basketQuantity = phones.filter((p) => p.isForSale).length;
 
   return (
     <div className="h-[64px] flex items-center pl-[24px] justify-between relative border-b border-Elements">

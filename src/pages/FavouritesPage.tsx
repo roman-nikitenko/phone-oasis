@@ -8,8 +8,6 @@ export const FavouritesPage: React.FC = () => {
   const { phones } = useAppSelector((state) => state);
   const favoritePhone = phones.filter((phone) => phone.isFavourite);
 
-  console.log(favoritePhone);
-
   return (
     <div className="">
       <div className="p-[20px] md:p-[40px] xl:px-[152px] lg:pt-[24px] grid gap-[40px]">

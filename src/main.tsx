@@ -16,7 +16,6 @@ import { RightsPage } from 'pages/RightsPage.tsx';
 import './index.css';
 import { Provider } from 'react-redux';
 import { store } from './store/store.ts';
-import { DetailPage } from './pages/DetailPage.tsx';
 
 const router = createHashRouter([
   {
@@ -75,7 +74,7 @@ const router = createHashRouter([
       },
       {
         path: 'detailPage',
-        element: <DetailPage />,
+        element: <ProductItemPage />,
       },
     ],
   },

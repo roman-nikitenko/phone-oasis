@@ -11,7 +11,10 @@ type Props = {
   phone: Phones;
 };
 
-type Options = 'plus' | 'minus';
+enum Options {
+  PLUS = 'plus',
+  MINUS = 'minus',
+}
 
 export const BasketCard: React.FC<Props> = ({ phone }) => {
   const { image, title, price, id } = phone;
@@ -21,10 +24,10 @@ export const BasketCard: React.FC<Props> = ({ phone }) => {
 
   const quantityHandler = (option: Options): void => {
     switch (option) {
-      case 'plus':
+      case Options.PLUS:
         setQuantity((prevState) => prevState + 1);
         break;
-      case 'minus':
+      case Options.MINUS:
         if (quantity <= 1) {
           return;
         }
@@ -53,14 +56,14 @@ export const BasketCard: React.FC<Props> = ({ phone }) => {
         <div className="flex items-center justify-between w-[100px]">
           <button
             className="w-8 h-8 border border-Elements flex justify-center items-center"
-            onClick={() => quantityHandler('minus')}
+            onClick={() => quantityHandler(Options.MINUS)}
           >
             <img src={minusIcon} alt="button minus" />
           </button>
           <p> {quantity} </p>
           <button
             className="w-8 h-8 border border-Elements flex justify-center items-center"
-            onClick={() => quantityHandler('plus')}
+            onClick={() => quantityHandler(Options.PLUS)}
           >
             <img src={plusIcon} alt="button minus" />
           </button>
