@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Phones } from '../../types/phones.ts';
+import { Phones } from 'types/phones.ts';
 import closeIcon from 'assets/close-grey.svg';
 import minusIcon from 'assets/minus.svg';
 import plusIcon from 'assets/plus.svg';
-import { useAppDispatch } from '../../hooks/hooks.ts';
-import { actions as basketActions } from '../../store/basketSlice.ts';
+import { useAppDispatch } from 'hooks/hooks.ts';
+import { actions as basketActions } from 'store/basketSlice.ts';
 import { Link } from 'react-router-dom';
 
 type Props = {

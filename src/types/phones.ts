@@ -6,5 +6,6 @@ export type Phones = {
   forSalePrice: number | null;
   isFavourite: boolean;
   isForSale: boolean;
+  isInBasket: boolean;
   image: string;
 };
