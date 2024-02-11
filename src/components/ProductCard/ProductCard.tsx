@@ -4,8 +4,8 @@ import { Button } from 'components/Button/Button.tsx';
 import { Phones } from 'types/phones.ts';
 import LikeIcon from 'assets/like.svg';
 import LikeIconFilled from 'assets/like-filled.svg';
-import { useAppDispatch } from '../../hooks/hooks.ts';
-import { actions } from '../../store/phonesSlice.ts';
+import { useAppDispatch } from 'hooks/hooks.ts';
+import { actions } from 'store/phonesSlice.ts';
 import { transformProductNameIntoPath } from 'utils/transformProductName.ts';
 
 type Props = {
@@ -14,7 +14,8 @@ type Props = {
 };
 
 export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
-  const { isFavourite, isForSale, image, id, title, price, category, forSalePrice } = phone;
+  const { isFavourite, isForSale, image, id, title, price, category, forSalePrice, isInBasket } =
+    phone;
   const path = category && `/${category}/${transformProductNameIntoPath(title)}`;
   const dispatch = useAppDispatch();
 
@@ -56,7 +57,11 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
           </p>
         </div>
         <div className="flex gap-[8px] justify-between">
-          <Button text={'Add to cart'} onClick={handleAddToCart} />
+          <Button
+            text={`${isInBasket ? 'Added' : 'Add'} to cart`}
+            onClick={handleAddToCart}
+            className={isInBasket ? 'active-Button ' : ''}
+          />
           <Button
             iconSrc={isFavourite ? LikeIconFilled : LikeIcon}
             className="w-[40px] h-[40px]"
