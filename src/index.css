@@ -5,6 +5,7 @@
 @layer base {
   html {
     font-family: 'Montserrat', sans-serif;
+    @apply scroll-smooth;
   }
   body {
     min-height: 100vh;

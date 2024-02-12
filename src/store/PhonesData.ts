@@ -18,6 +18,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone1,
+    quantity: 1,
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ export const initialState: Phones[] = [
     forSalePrice: 1199,
     isInBasket: false,
     image: Phone2,
+    quantity: 1,
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone3,
+    quantity: 1,
   },
   {
     id: 4,
@@ -51,6 +54,7 @@ export const initialState: Phones[] = [
     forSalePrice: 899,
     isInBasket: false,
     image: Phone4,
+    quantity: 1,
   },
   {
     id: 5,
@@ -62,6 +66,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone5,
+    quantity: 1,
   },
   {
     id: 6,
@@ -73,6 +78,7 @@ export const initialState: Phones[] = [
     forSalePrice: null,
     isInBasket: false,
     image: Phone6,
+    quantity: 1,
   },
   {
     id: 7,
@@ -84,6 +90,7 @@ export const initialState: Phones[] = [
     forSalePrice: null,
     isInBasket: false,
     image: Phone7,
+    quantity: 1,
   },
   {
     id: 8,
@@ -95,6 +102,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone1,
+    quantity: 1,
   },
   {
     id: 9,
@@ -106,6 +114,7 @@ export const initialState: Phones[] = [
     forSalePrice: 1199,
     isInBasket: false,
     image: Phone2,
+    quantity: 1,
   },
   {
     id: 10,
@@ -117,6 +126,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone3,
+    quantity: 1,
   },
   {
     id: 11,
@@ -128,6 +138,7 @@ export const initialState: Phones[] = [
     forSalePrice: 899,
     isInBasket: false,
     image: Phone4,
+    quantity: 1,
   },
   {
     id: 12,
@@ -139,6 +150,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone5,
+    quantity: 1,
   },
   {
     id: 13,
@@ -150,6 +162,7 @@ export const initialState: Phones[] = [
     forSalePrice: null,
     isInBasket: false,
     image: Phone6,
+    quantity: 1,
   },
   {
     id: 14,
@@ -161,6 +174,7 @@ export const initialState: Phones[] = [
     forSalePrice: null,
     isInBasket: false,
     image: Phone7,
+    quantity: 1,
   },
   {
     id: 15,
@@ -172,6 +186,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone1,
+    quantity: 1,
   },
   {
     id: 16,
@@ -183,6 +198,7 @@ export const initialState: Phones[] = [
     forSalePrice: 1199,
     isInBasket: false,
     image: Phone2,
+    quantity: 1,
   },
   {
     id: 17,
@@ -194,6 +210,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone3,
+    quantity: 1,
   },
   {
     id: 18,
@@ -205,6 +222,7 @@ export const initialState: Phones[] = [
     forSalePrice: 899,
     isInBasket: false,
     image: Phone4,
+    quantity: 1,
   },
   {
     id: 19,
@@ -216,6 +234,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone5,
+    quantity: 1,
   },
   {
     id: 20,
@@ -227,6 +246,7 @@ export const initialState: Phones[] = [
     forSalePrice: null,
     isInBasket: false,
     image: Phone6,
+    quantity: 1,
   },
   {
     id: 21,
@@ -238,6 +258,7 @@ export const initialState: Phones[] = [
     forSalePrice: null,
     isInBasket: false,
     image: Phone7,
+    quantity: 1,
   },
   {
     id: 22,
@@ -249,6 +270,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone1,
+    quantity: 1,
   },
   {
     id: 23,
@@ -260,6 +282,7 @@ export const initialState: Phones[] = [
     forSalePrice: 1199,
     isInBasket: false,
     image: Phone2,
+    quantity: 1,
   },
   {
     id: 24,
@@ -271,6 +294,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone3,
+    quantity: 1,
   },
   {
     id: 25,
@@ -282,6 +306,7 @@ export const initialState: Phones[] = [
     forSalePrice: 899,
     isInBasket: false,
     image: Phone4,
+    quantity: 1,
   },
   {
     id: 26,
@@ -293,6 +318,7 @@ export const initialState: Phones[] = [
     forSalePrice: 799,
     isInBasket: false,
     image: Phone5,
+    quantity: 1,
   },
   {
     id: 27,
@@ -304,6 +330,7 @@ export const initialState: Phones[] = [
     forSalePrice: null,
     isInBasket: false,
     image: Phone6,
+    quantity: 1,
   },
   {
     id: 28,
@@ -315,5 +342,6 @@ export const initialState: Phones[] = [
     forSalePrice: null,
     isInBasket: false,
     image: Phone7,
+    quantity: 1,
   },
 ];

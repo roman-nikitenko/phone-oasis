@@ -7,11 +7,29 @@ export const basketSlice = createSlice({
   name: 'basket',
   initialState,
   reducers: {
-    addToBasket: (state, action: PayloadAction<Phones>) => {
-      state.push(action.payload);
+    addToBasket: (state, action: PayloadAction<Phones>): void => {
+      const newPhone = action.payload;
+      const existPhone = state.find((phone): boolean => phone.id === newPhone.id);
+      if (!existPhone) {
+        state.push(newPhone);
+      } else {
+        existPhone.quantity++;
+      }
+    },
+    plusQuantity: (state, action: PayloadAction<number>): void => {
+      const existPhone = state.find((phone): boolean => phone.id === action.payload);
+      if (existPhone) {
+        existPhone.quantity++;
+      }
+    },
+    minusQuantity: (state, action: PayloadAction<number>): void => {
+      const existPhone = state.find((phone): boolean => phone.id === action.payload);
+      if (existPhone) {
+        existPhone.quantity--;
+      }
     },
     deleteFromBasket: (state, action: PayloadAction<number>) => {
-      return state.filter((phone) => phone.id !== action.payload);
+      return state.filter((phone): boolean => phone.id !== action.payload);
     },
   },
 });

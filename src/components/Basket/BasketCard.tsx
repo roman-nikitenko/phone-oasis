@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Phones } from 'types/phones.ts';
+import React from 'react';
+import { Phones } from '../../types/phones.ts';
 import closeIcon from 'assets/close-grey.svg';
 import minusIcon from 'assets/minus.svg';
 import plusIcon from 'assets/plus.svg';
-import { useAppDispatch } from 'hooks/hooks.ts';
-import { actions as basketActions } from 'store/basketSlice.ts';
+import { useAppDispatch } from '../../hooks/hooks.ts';
+import { actions as basketActions } from '../../store/basketSlice.ts';
 import { Link } from 'react-router-dom';
 
 type Props = {
@@ -17,21 +17,20 @@ enum Options {
 }
 
 export const BasketCard: React.FC<Props> = ({ phone }) => {
-  const { image, title, price, id } = phone;
-  const [quantity, setQuantity] = useState(1);
+  const { image, title, price, id, quantity } = phone;
   const dispatch = useAppDispatch();
   const priceCount = price * quantity;
 
   const quantityHandler = (option: Options): void => {
     switch (option) {
       case Options.PLUS:
-        setQuantity((prevState) => prevState + 1);
+        dispatch(basketActions.plusQuantity(id));
         break;
       case Options.MINUS:
         if (quantity <= 1) {
           return;
         }
-        setQuantity((prevState) => prevState - 1);
+        dispatch(basketActions.minusQuantity(id));
         break;
       default:
         return;

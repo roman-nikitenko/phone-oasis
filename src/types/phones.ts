@@ -8,4 +8,5 @@ export type Phones = {
   isForSale: boolean;
   isInBasket: boolean;
   image: string;
+  quantity: number;
 };
