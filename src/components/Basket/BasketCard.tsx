@@ -4,7 +4,7 @@ import closeIcon from 'assets/close-grey.svg';
 import minusIcon from 'assets/minus.svg';
 import plusIcon from 'assets/plus.svg';
 import { useAppDispatch } from '../../hooks/hooks.ts';
-import { actions, actions as basketActions } from '../../store/basketSlice.ts';
+import { actions as basketActions } from '../../store/basketSlice.ts';
 import { Link } from 'react-router-dom';
 
 type Props = {
@@ -24,13 +24,13 @@ export const BasketCard: React.FC<Props> = ({ phone }) => {
   const quantityHandler = (option: Options): void => {
     switch (option) {
       case Options.PLUS:
-        dispatch(actions.plusQuantity(id));
+        dispatch(basketActions.plusQuantity(id));
         break;
       case Options.MINUS:
         if (quantity <= 1) {
           return;
         }
-        dispatch(actions.minusQuantity(id));
+        dispatch(basketActions.minusQuantity(id));
         break;
       default:
         return;
