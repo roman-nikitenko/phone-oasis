@@ -68,3 +68,23 @@
 .marker {
   @apply before:absolute before:-inset-1 before:bg-Red before:rounded-full before:w-[14px] before:h-[14px] before:border-white before:border before:left-[32px] before:top-[18px] before:text-[9px] before:text-center before:text-white
 }
+
+.option {
+  @apply rounded-none font-medium text-Secondary bg-White
+}
+
+.active-Button {
+  @apply border-Elements text-Green bg-White
+}
+
+.pagination-Button {
+  @apply w-[32px] h-[32px] font-medium
+}
+
+.not-Active-Pagination-Button {
+  @apply text-Primary border-Elements bg-White hover:border-Primary
+}
+
+.active-Pagination-Button {
+  @apply hover:!text-White hover:!bg-Primary hover:cursor-auto active:!border-Primary
+}
