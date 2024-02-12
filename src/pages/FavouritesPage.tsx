@@ -15,7 +15,7 @@ export const FavouritesPage: React.FC = () => {
         <PageTitle title="Favourites" />
         <div className="flex flex-wrap gap-x-[16px] gap-y-[40px]">
           {favoritePhone.map((item) => (
-            <ProductCard phone={item} />
+            <ProductCard key={item.id} phone={item} />
           ))}
         </div>
       </div>

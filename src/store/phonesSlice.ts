@@ -18,6 +18,7 @@ const initialState: Phones[] = [
     price: 899,
     forSalePrice: 799,
     image: Phone1,
+    quantity: 1,
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const initialState: Phones[] = [
     price: 1999,
     forSalePrice: 1199,
     image: Phone2,
+    quantity: 1,
   },
   {
     id: 3,
@@ -38,6 +40,7 @@ const initialState: Phones[] = [
     price: 899,
     forSalePrice: 799,
     image: Phone3,
+    quantity: 1,
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ const initialState: Phones[] = [
     price: 859,
     forSalePrice: 899,
     image: Phone4,
+    quantity: 1,
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ const initialState: Phones[] = [
     price: 899,
     forSalePrice: 799,
     image: Phone5,
+    quantity: 1,
   },
   {
     id: 6,
@@ -68,6 +73,7 @@ const initialState: Phones[] = [
     price: 899,
     forSalePrice: null,
     image: Phone6,
+    quantity: 1,
   },
   {
     id: 7,
@@ -78,6 +84,7 @@ const initialState: Phones[] = [
     price: 1299,
     forSalePrice: null,
     image: Phone7,
+    quantity: 1,
   },
 ];
 

@@ -7,4 +7,5 @@ export type Phones = {
   isFavourite: boolean;
   isForSale: boolean;
   image: string;
+  quantity: number;
 };
