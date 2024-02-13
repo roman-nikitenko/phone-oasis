@@ -21,6 +21,12 @@ export const ProductsPage: React.FC = () => {
   const paths: string[] = pathname.split('/');
   const currentPath = paths[1];
 
+  const pageNumbers: number[] = [];
+
+  for (let i = 1; i <= Math.ceil(allProducts.length / numberProductsOnPage); i++) {
+    pageNumbers.push(i);
+  }
+
   const sortByDate = (value: string | undefined): void => {
     console.log(value);
   };
@@ -59,6 +65,7 @@ export const ProductsPage: React.FC = () => {
             width="128px"
             options={['16', '32']}
             onChange={sortByAmount}
+            isDisabled={currentPage === pageNumbers.length}
           />
         </div>
         <div className="flex flex-wrap gap-x-[16px] sm:gap[16px] gap-y-[40px]">
@@ -68,8 +75,7 @@ export const ProductsPage: React.FC = () => {
         </div>
       </div>
       <Pagination
-        numberProductsOnPage={numberProductsOnPage}
-        totalProducts={allProducts.length}
+        pageNumbers={pageNumbers}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />

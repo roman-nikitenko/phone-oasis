@@ -7,24 +7,12 @@ import ArrowRight from 'assets/arrow-right-darkgrey.svg';
 import ArrowRightDisabled from 'assets/arrow-right.svg';
 
 type Props = {
-  numberProductsOnPage: number;
-  totalProducts: number;
   currentPage: number;
+  pageNumbers: number[];
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export const Pagination: React.FC<Props> = ({
-  numberProductsOnPage,
-  totalProducts,
-  currentPage,
-  setCurrentPage,
-}) => {
-  const pageNumbers: number[] = [];
-
-  for (let i = 1; i <= Math.ceil(totalProducts / numberProductsOnPage); i++) {
-    pageNumbers.push(i);
-  }
-
+export const Pagination: React.FC<Props> = ({ currentPage, pageNumbers, setCurrentPage }) => {
   const handlePreviousPage = (): void => {
     setCurrentPage((prev: number) => prev - 1);
     window.scrollTo(0, 0);
