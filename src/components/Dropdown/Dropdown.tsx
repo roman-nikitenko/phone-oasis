@@ -7,6 +7,7 @@ type Props = {
   labelText: string;
   selectedValue: string;
   width: string;
+  isDisabled?: boolean;
   options: string[];
   onChange: (value: string | undefined) => void;
 };
@@ -16,6 +17,7 @@ export const Dropdown: React.FC<Props> = ({
   labelText,
   selectedValue,
   width,
+  isDisabled,
   options,
   onChange,
 }) => {
@@ -42,6 +44,7 @@ export const Dropdown: React.FC<Props> = ({
           <Option
             value={option}
             key={option}
+            disabled={isDisabled && option === '32'}
             className="py-[6px] px-[12px] button-text option focus:bg-Hover-BG hover:bg-Hover-BG focus:text-Primary hover:text-Primary"
           >
             {option}
