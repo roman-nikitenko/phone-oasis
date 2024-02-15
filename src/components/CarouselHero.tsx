@@ -14,11 +14,11 @@ export const CarouselHero: React.FC<Props> = ({ slides }) => {
 
   return (
     <>
-      <div className="max-w-[1136px] w-full">
+      <div className="">
         <div className="flex items-center mb-[18px] relative ">
-          <div className=" border overflow-hidden ">
+          <div className="max-w-[1136px] xl:h-[630px] w-full overflow-hidden ">
             <div
-              className="flex transition duration-700"
+              className="flex transition duration-700 object-fill"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               {slides.map((s) => (
@@ -26,7 +26,7 @@ export const CarouselHero: React.FC<Props> = ({ slides }) => {
               ))}
             </div>
           </div>
-          <div className="absolute inset-0 flex items-center justify-between p-4">
+          <div className="absolute inset-0 flex items-center justify-between sm:p-4">
             <IconButton
               placeholder="prev button"
               variant="text"

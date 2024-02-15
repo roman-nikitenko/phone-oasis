@@ -4,13 +4,13 @@ import { Navigation } from './Navigation.tsx';
 import { Icon } from './Icon.tsx';
 import basket from 'assets/cart.svg';
 import like from 'assets/like.svg';
-import { useLocation } from 'react-router';
-import { SearchBar } from './SearchBar.tsx';
+// import { useLocation } from 'react-router';
+// import { SearchBar } from './SearchBar.tsx';
 import { useAppSelector } from '../../hooks/hooks.ts';
 
 export const Header: React.FC = () => {
-  const location = useLocation();
-  const isNotHome = location.pathname !== '/' && true;
+  // const location = useLocation();
+  // const isNotHome = location.pathname !== '/' && true;
   const phones = useAppSelector((state) => state.phones);
   const basketFromStore = useAppSelector((state) => state.basket);
   const basketQuantity = basketFromStore.length;
@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
       <div className="flex">
-        {isNotHome && <SearchBar />}
+        {/*{isNotHome && <SearchBar />}*/}
         <Icon quantity={+favoriteQuantity} image={like} link="favourites" />
         <Icon quantity={+basketQuantity} image={basket} link="basket" />
       </div>
