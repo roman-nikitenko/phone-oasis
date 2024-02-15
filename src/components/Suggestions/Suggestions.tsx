@@ -6,6 +6,7 @@ import ArrowRightDisabled from 'assets/arrow-right.svg';
 import ArrowLeft from 'assets/arrow-left-darkgrey.svg';
 import ArrowRight from 'assets/arrow-right-darkgrey.svg';
 import { Phones } from 'types/phones.ts';
+import useScreenSize from '../../hooks/useScreenSize.tsx';
 
 type Props = {
   title: string;
@@ -17,31 +18,19 @@ export const Suggestions: React.FC<Props> = ({ title, phones }) => {
   const [isLeftButton, setIsLeftButton] = useState(true);
   const [isRightButton, setIsRightButton] = useState(false);
   const [showNewPartPhones, setShowNewPartPhones] = useState(2);
-  const [windowWidth, setWindowWidth] = useState([window.innerWidth]);
   const [number, setNumber] = useState(2);
+  const { widthScreen } = useScreenSize();
 
   useEffect(() => {
-    const windowWidthHandler = () => {
-      setWindowWidth([innerWidth]);
-    };
-
-    window.addEventListener('resize', windowWidthHandler);
-
-    return () => {
-      window.removeEventListener('resize', windowWidthHandler);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (Number(windowWidth) >= 768) {
+    if (widthScreen >= 768) {
       setShowNewPartPhones(3);
       setNumber(3);
     }
-    if (Number(windowWidth) === 1024) {
+    if (widthScreen === 1024) {
       setShowNewPartPhones(4);
       setNumber(4);
     }
-  }, [windowWidth]);
+  }, [widthScreen]);
 
   const step = 288;
   const maxElements = -(phones.length - 4) * step;
@@ -91,7 +80,7 @@ export const Suggestions: React.FC<Props> = ({ title, phones }) => {
           />
         </div>
       </div>
-      {Number(windowWidth) >= 1280 && (
+      {widthScreen >= 1280 && (
         <div className="lg:flex sm:gap-x-[16px] gap-y-[40px]  lg:w-[1136px] lg:overflow-hidden">
           {phones.map((phone: Phones) => (
             <ProductCard phone={phone} offset={offset} />
