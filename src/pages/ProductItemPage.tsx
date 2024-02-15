@@ -3,7 +3,7 @@ import { PageNavigation } from 'components/PageNavigation/PageNavigation.tsx';
 
 export const ProductItemPage: React.FC = () => {
   return (
-    <div>
+    <div className="">
       <PageNavigation />
     </div>
   );

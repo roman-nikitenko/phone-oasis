@@ -22,7 +22,7 @@ export const Button: React.FC<Props> = ({
     classNames(
       'flex justify-center items-center border cursor-pointer transition-colors',
       text &&
-        'w-[176px] h-[40px] button-text border-Primary bg-Primary text-White hover:button-shadow hover:bg-White hover:text-Primary active:border-Elements active:text-Green active:bg-White',
+        'flex-1 h-[40px] button-text border-Primary bg-Primary text-White hover:button-shadow hover:bg-White hover:text-Primary active:border-Elements active:text-Green active:bg-White',
       iconSrc &&
         'w-[32px] h-[32px] border-Icons hover:border-Primary disabled:border-Elements disabled:cursor-auto',
       className && className
