@@ -16,18 +16,20 @@ export const Header: React.FC = () => {
   const basketFromStore = useAppSelector((state) => state.basket);
   const basketQuantity = basketFromStore.length;
   const favoriteQuantity = phones.filter((p) => p.isFavourite).length;
-  const { widthScreen } = useScreenSize();
+  const { widthScreen, heightScreen } = useScreenSize();
+
+  console.log(widthScreen, heightScreen);
 
   return (
-    <div className="h-[64px] flex items-center pl-[24px] justify-between relative border-b border-Elements">
+    <div className="h-[64px] flex items-center sm:pl-[24px] justify-between relative border-b border-Elements">
       <div className="flex gap-[64px] items-center">
         <Logo />
-        <div className="hidden lg:flex">
+        <div className="hidden xl:flex">
           <Navigation />
         </div>
       </div>
       <div className="flex">
-        {isNotHome && widthScreen > 1024 && <SearchBar />}
+        {isNotHome && <SearchBar />}
         <Icon quantity={+favoriteQuantity} image={like} link="favourites" />
         <Icon quantity={+basketQuantity} image={basket} link="basket" />
       </div>
