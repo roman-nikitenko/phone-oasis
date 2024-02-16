@@ -7,31 +7,34 @@ export const SearchBar: React.FC = () => {
 
   const inputTextHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
-  }
+  };
 
   const clearInputTextField = () => {
-    setInputText('')
-  }
+    setInputText('');
+  };
 
   const isEmptyField = inputText.trim().length === 0;
 
   return (
-    <label className="border-l border-Elements flex items-center w-[327px] justify-between">
+    <label className="border-l border-Elements flex items-center md:w-[327px]  justify-between">
       <input
         type="text"
-        className="text-Secondary pl-[24px] focus:outline-none "
+        className="text-Secondary pl-[24px] flex-1 focus:outline-none "
         placeholder="Search in phones..."
         value={inputText}
         onChange={inputTextHandler}
       />
-      {isEmptyField && <img className="w-[18px] h-[18px] mr-[24px]" src={searchIcon} />}
-      {!isEmptyField && (
-        <img
-          onClick={clearInputTextField}
-          className="w-[18px] h-[18px] mr-[24px] cursor-pointer"
-          src={closeIcon}
-        />
-      )}
+      <div className="hidden md:block">
+        {isEmptyField && <img className="w-[18px] h-[18px] mr-[24px]" src={searchIcon} />}
+        {!isEmptyField && (
+          <img
+            onClick={clearInputTextField}
+            className="w-[18px] h-[18px] mr-[24px] cursor-pointer"
+            src={closeIcon}
+          />
+        )}
+      </div>
+
     </label>
   );
 };

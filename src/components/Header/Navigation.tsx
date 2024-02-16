@@ -4,10 +4,9 @@ import classNames from 'classnames';
 
 export const Navigation: React.FC = () => {
   const getNavigationLink = ({ isActive }: { isActive: boolean }): string =>
-    classNames(
-      'uppercase text-Secondary relative hover:text-Primary pt-[27px] pb-[26px]',
-      { 'is-Active-nav': isActive }
-    );
+    classNames('uppercase text-Secondary relative hover:text-Primary pt-[27px] pb-[26px]', {
+      'is-Active-nav': isActive,
+    });
 
   return (
     <div className="">

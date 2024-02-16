@@ -31,13 +31,13 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
 
   return (
     <div
-      className="w-full p-[24px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px] transition duration-700"
+      className="w-full lg:p-[24px] border-l border-t border-b  border-Elements p-[5px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px] transition duration-700"
       style={{ transform: `translateX(${offset}px)` }}
     >
       <img src={image} alt="product photo" />
       <div>
         <Link to={path}>
-          <p className="pb-[7px] font-medium text-Primary hover:text-Secondary">{title}</p>
+          <p className="pb-[7px] truncate text-Primary hover:text-Secondary">{title}</p>
         </Link>
 
         <div className="pb-[5px] flex gap-[8px]">
@@ -58,7 +58,7 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
             <span className="text-Primary">4 GB</span>
           </p>
         </div>
-        <div className="flex">
+        <div className="flex sm:gap-[8px]">
           <Button
             text={`${isInBasket ? 'Added' : 'Add'} to cart`}
             onClick={handleAddToCart}
