@@ -61,7 +61,7 @@ export const Suggestions: React.FC<Props> = ({ title, phones }) => {
           />
         </div>
       </div>
-      <div className="flex gap-x-[16px] gap-y-[40px] w-[1136px] overflow-hidden">
+      <div className="flex gap-x-[16px] gap-y-[40px] xl:w-[1136px] w-[562px] overflow-hidden">
         {phones.map((phone: Phones) => (
           <ProductCard phone={phone} offset={offset} />
         ))}

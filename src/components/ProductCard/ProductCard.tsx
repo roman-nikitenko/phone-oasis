@@ -58,7 +58,7 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
             <span className="text-Primary">4 GB</span>
           </p>
         </div>
-        <div className="flex gap-[8px] justify-between">
+        <div className="flex">
           <Button
             text={`${isInBasket ? 'Added' : 'Add'} to cart`}
             onClick={handleAddToCart}

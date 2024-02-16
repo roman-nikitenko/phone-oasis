@@ -42,16 +42,26 @@ export const BasketCard: React.FC<Props> = ({ phone }) => {
   };
 
   return (
-    <div className="border border-Elements w-[752px] flex items-center justify-between py-[31px] pl-[24px] pr-[40px]">
-      <div className="flex items-center gap-[24px]">
-        <img onClick={deleteItem} src={closeIcon} className="cursor-pointer" alt="cancel" />
-        <img src={image} alt="image phone" className="w-[66px] h-[66px]" />
-        <p className="w-[295px]">
+    <div className="md:flex lg:w-[752px] border border-Elements relative md:justify-between p-[16px] md:p-[31px]">
+      <div className="flex mb-6 md:mb-0 items-center gap-[16px]">
+        <img
+          onClick={deleteItem}
+          src={closeIcon}
+          className="cursor-pointer md:flex hidden"
+          alt="cancel"
+        />
+        <img src={image} className="w-[66px] h-[66px] lg:ml-[16px]" alt="phone" />
+        <p className="md:w-[295px]">
           <Link to={`/detailPage/${id}`}>{title}</Link>
         </p>
+        <img
+          onClick={deleteItem}
+          src={closeIcon}
+          className="cursor-pointer absolute top-[10px] right-[10px] md:hidden"
+          alt="cancel"
+        />
       </div>
-
-      <div className="flex justify-between w-[200px]">
+      <div className="flex items-center md:gap-[20px] lg:gap-[43px] justify-between">
         <div className="flex items-center justify-between w-[100px]">
           <button
             className="w-8 h-8 border border-Elements flex justify-center items-center"

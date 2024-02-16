@@ -16,7 +16,7 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="sm:px-[20px] md:py-[40px] xl:px-[152px] lg:py-[80px] grid justify-items-center pt-[20px] px-[5px] gap-[40px] xl:gap-[80px]">
+    <div className="sm:px-[20px] md:py-[20px] xl:px-[152px] pb-[80px] grid justify-items-center gap-[40px] xl:gap-[80px]">
       <div className="flex justify-center">
         <CarouselHero slides={slides} />
       </div>
