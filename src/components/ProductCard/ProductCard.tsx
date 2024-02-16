@@ -31,7 +31,7 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
 
   return (
     <div
-      className="w-full lg:p-[24px] border-l border-t border-b  border-Elements p-[5px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px] transition duration-700"
+      className="w-full px-[5px] py-[24px] lg:px-[16px] xl:px-[24px] flex flex-col gap-[24px] border-[0.5px] border-Elements lg:border sm:max-w-[272px] transition duration-700"
       style={{ transform: `translateX(${offset}px)` }}
     >
       <img src={image} alt="product photo" />
