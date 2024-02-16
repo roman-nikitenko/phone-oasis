@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IconButton } from '@material-tailwind/react';
-import { Banner } from '../types/banner.ts';
+import { Banner } from 'types/banner.ts';
 
 type Props = {
   slides: Banner[];

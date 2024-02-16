@@ -2,24 +2,30 @@ import React from 'react';
 import classNames from 'classnames';
 
 type Props = {
-  text: string;
+  iconSrc: string;
+  disabledIconSrc?: string;
   className?: string;
   isDisabled?: boolean;
   onClick: () => void;
 };
 
-export const Button: React.FC<Props> = ({ text, className, isDisabled, onClick }) => {
+export const IconButton: React.FC<Props> = ({
+  iconSrc,
+  className,
+  isDisabled,
+  disabledIconSrc,
+  onClick,
+}) => {
   const getButtonClassNames = (): string =>
     classNames(
       'flex justify-center items-center border cursor-pointer transition-colors',
-      text &&
-        'flex-1 h-[40px] button-text border-Primary bg-Primary text-White hover:button-shadow hover:bg-White hover:text-Primary active:border-Elements active:text-Green active:bg-White',
+      'min-w-[32px] min-h-[32px] border-Icons hover:border-Primary disabled:border-Elements disabled:cursor-auto',
       className && className
     );
 
   return (
     <button className={getButtonClassNames()} onClick={onClick} disabled={isDisabled}>
-      {text && text}
+      <img src={disabledIconSrc && isDisabled ? disabledIconSrc : iconSrc} alt="icon" />
     </button>
   );
 };

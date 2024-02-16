@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarouselHero } from 'components/CarouselHero.tsx';
+import { CarouselHero } from 'components/CarouselHero/CarouselHero.tsx';
 import { Suggestions } from 'components/Suggestions/Suggestions.tsx';
 import { Categories } from 'components/Categories/Categories.tsx';
 import mack from 'assets/banner/mack.jpg';

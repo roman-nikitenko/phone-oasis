@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { ProductCard } from 'components/ProductCard/ProductCard.tsx';
-import { Button } from 'components/Button/Button.tsx';
+import { IconButton } from 'components/IconButton/IconButton.tsx';
 import ArrowLeftDisabled from 'assets/arrow-left.svg';
 import ArrowRightDisabled from 'assets/arrow-right.svg';
 import ArrowLeft from 'assets/arrow-left-darkgrey.svg';
 import ArrowRight from 'assets/arrow-right-darkgrey.svg';
 import { Phones } from 'types/phones.ts';
-import useScreenSize from '../../hooks/useScreenSize.tsx';
+import useScreenSize from 'hooks/useScreenSize.tsx';
 
 type Props = {
   title: string;
@@ -66,13 +66,13 @@ export const Suggestions: React.FC<Props> = ({ title, phones }) => {
       <div className="flex justify-between">
         <h1 className="pb-[24px] text-Primary">{title}</h1>
         <div className="hidden xl:flex sm:gap-[16px]">
-          <Button
+          <IconButton
             iconSrc={ArrowLeft}
             disabledIconSrc={ArrowLeftDisabled}
             isDisabled={isLeftButton}
             onClick={handleLeftClick}
           />
-          <Button
+          <IconButton
             iconSrc={ArrowRight}
             disabledIconSrc={ArrowRightDisabled}
             isDisabled={isRightButton}

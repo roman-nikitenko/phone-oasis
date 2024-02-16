@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Button } from 'components/Button/Button.tsx';
+import { IconButton } from 'components/IconButton/IconButton.tsx';
 import ArrowLeft from 'assets/arrow-left-darkgrey.svg';
 import ArrowLeftDisabled from 'assets/arrow-left.svg';
 import ArrowRight from 'assets/arrow-right-darkgrey.svg';
@@ -30,7 +31,7 @@ export const Pagination: React.FC<Props> = ({ currentPage, pageNumbers, setCurre
 
   return (
     <div className="justify-self-center flex gap-[16px]">
-      <Button
+      <IconButton
         iconSrc={ArrowLeft}
         isDisabled={currentPage === 1}
         disabledIconSrc={ArrowLeftDisabled}
@@ -51,7 +52,7 @@ export const Pagination: React.FC<Props> = ({ currentPage, pageNumbers, setCurre
           />
         ))}
       </div>
-      <Button
+      <IconButton
         iconSrc={ArrowRight}
         isDisabled={currentPage === pageNumbers.length}
         disabledIconSrc={ArrowRightDisabled}

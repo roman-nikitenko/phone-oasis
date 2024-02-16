@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'components/Button/Button.tsx';
+import { IconButton } from 'components/IconButton/IconButton.tsx';
 import { Phones } from 'types/phones.ts';
 import LikeIcon from 'assets/like.svg';
 import LikeIconFilled from 'assets/like-filled.svg';
@@ -39,7 +40,6 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
         <Link to={path}>
           <p className="pb-[7px] truncate text-Primary hover:text-Secondary">{title}</p>
         </Link>
-
         <div className="pb-[5px] flex gap-[8px]">
           <h2>{price}</h2>
           {isForSale && <h2 className="font-medium text-Secondary line-through">{forSalePrice}</h2>}
@@ -64,7 +64,7 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
             onClick={handleAddToCart}
             className={isInBasket ? 'active-Button ' : ''}
           />
-          <Button
+          <IconButton
             iconSrc={isFavourite ? LikeIconFilled : LikeIcon}
             className="w-[40px] h-[40px]"
             onClick={handleAddToFavourites}
