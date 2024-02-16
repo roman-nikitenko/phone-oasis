@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/Button/Button.tsx';
 import { Phones } from 'types/phones.ts';
 import LikeIcon from 'assets/like.svg';
@@ -19,10 +20,15 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
     phone;
   const path = category && `/${category}/${transformProductNameIntoPath(title)}`;
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleAddToCart = (): void => {
-    dispatch(basketActions.addToBasket(phone));
-    dispatch(phonesActions.addToBasket(id));
+    if (isInBasket) {
+      return navigate('/basket');
+    } else {
+      dispatch(basketActions.addToBasket(phone));
+      dispatch(phonesActions.addToBasket(id));
+    }
   };
 
   const handleAddToFavourites = (): void => {
