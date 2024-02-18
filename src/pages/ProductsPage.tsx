@@ -38,7 +38,7 @@ export const ProductsPage: React.FC = () => {
   };
 
   return (
-    <div className="p-[20px] sm:p-10 lg:px-20 lg:pt-[24px] xl:px-[152px] grid gap-[40px]">
+    <div className="px-[8px] py-[20px] md:px-[16px] lg:px-[40px] lg:py-[24px] xl:px-[152px] grid gap-[16px] md:gap[30px] lg:gap-[40px]">
       <PageNavigation />
       <PageTitle
         title={
@@ -49,12 +49,12 @@ export const ProductsPage: React.FC = () => {
         modelQuantity={95}
       />
       <div className="mt-[20px] max-w-[1440px] mx-auto">
-        <div className="flex gap-[16px] mb-[24px]">
+        <div className="flex gap-[8px] mb-[24px]">
           <Dropdown
             name="novelty"
             labelText="Sort by"
             selectedValue="Newest"
-            width="176px"
+            className="w-[155px] sm:w-[176px]"
             options={['Newest', 'Oldest']}
             onChange={sortByDate}
           />
@@ -62,13 +62,12 @@ export const ProductsPage: React.FC = () => {
             name="amount"
             labelText="Items on page"
             selectedValue={numberProductsOnPage.toString()}
-            width="128px"
             options={['16', '32']}
             onChange={sortByAmount}
             isDisabled={currentPage === pageNumbers.length}
           />
         </div>
-        <div className="flex flex-wrap gap-x-[16px] sm:gap[16px] gap-y-[40px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-[16px] lg:gap-y-[40px]">
           {products.map((phoneItem: Phones) => (
             <ProductCard phone={phoneItem} key={phoneItem.id} />
           ))}

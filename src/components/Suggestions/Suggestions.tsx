@@ -83,14 +83,14 @@ export const Suggestions: React.FC<Props> = ({ title, phones }) => {
       {widthScreen >= 1280 && (
         <div className="lg:flex sm:gap-x-[16px] gap-y-[40px]  lg:w-[1136px] lg:overflow-hidden">
           {phones.map((phone: Phones) => (
-            <ProductCard phone={phone} offset={offset} />
+            <ProductCard key={phone.id} phone={phone} offset={offset} />
           ))}
         </div>
       )}
       <div className="">
         <div className="xl:hidden sm:gap-x-[16px] gap-y-[40px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {phones.slice(0, showNewPartPhones).map((phone: Phones) => (
-            <ProductCard phone={phone} offset={offset} />
+            <ProductCard key={phone.id} phone={phone} offset={offset} />
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/Button/Button.tsx';
 import { IconButton } from 'components/IconButton/IconButton.tsx';
 import { Phones } from 'types/phones.ts';
@@ -20,10 +21,15 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
     phone;
   const path = category && `/${category}/${transformProductNameIntoPath(title)}`;
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleAddToCart = (): void => {
-    dispatch(basketActions.addToBasket(phone));
-    dispatch(phonesActions.addToBasket(id));
+    if (isInBasket) {
+      return navigate('/basket');
+    } else {
+      dispatch(basketActions.addToBasket(phone));
+      dispatch(phonesActions.addToBasket(id));
+    }
   };
 
   const handleAddToFavourites = (): void => {
@@ -32,7 +38,7 @@ export const ProductCard: React.FC<Props> = ({ offset, phone }) => {
 
   return (
     <div
-      className="w-full lg:p-[24px] border-l border-t border-b  border-Elements p-[5px] flex flex-col gap-[24px] sm:border sm:border-Elements sm:max-w-[272px] transition duration-700"
+      className="w-full px-[5px] py-[24px] lg:px-[16px] xl:px-[24px] flex flex-col gap-[24px] border-[0.5px] border-Elements lg:border sm:max-w-[272px] transition duration-700"
       style={{ transform: `translateX(${offset}px)` }}
     >
       <img src={image} alt="product photo" />

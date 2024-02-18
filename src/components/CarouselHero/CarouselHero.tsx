@@ -76,8 +76,9 @@ export const CarouselHero: React.FC<Props> = ({ slides }) => {
           </div>
         </div>
         <div className="flex gap-[14px] justify-center">
-          {slides.map((_, i) => (
+          {slides.map((_, i: number) => (
             <div
+              key={i}
               onClick={() => setCurrent(i)}
               className={`
               w-[14px] h-[4px] cursor-pointer ${current === i ? 'bg-Primary' : 'bg-Elements'} 

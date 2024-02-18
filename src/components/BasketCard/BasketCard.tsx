@@ -5,6 +5,7 @@ import minusIcon from 'assets/minus.svg';
 import plusIcon from 'assets/plus.svg';
 import { useAppDispatch } from 'hooks/hooks.ts';
 import { actions as basketActions } from 'store/basketSlice.ts';
+import { actions as phonesActions } from 'store/phonesSlice.ts';
 import { Link } from 'react-router-dom';
 import { IconButton } from 'components/IconButton/IconButton.tsx';
 
@@ -40,6 +41,7 @@ export const BasketCard: React.FC<Props> = ({ phone }) => {
 
   const deleteItem = (): void => {
     dispatch(basketActions.deleteFromBasket(id));
+    dispatch(phonesActions.deleteFromBasket(id));
   };
 
   return (

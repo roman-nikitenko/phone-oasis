@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAppSelector } from '../hooks/hooks.ts';
 import { PageNavigation } from '../components/PageNavigation/PageNavigation.tsx';
-import { BasketCard } from '../components/Basket/BasketCard.tsx';
+import { BasketCard } from '../components/BasketCard/BasketCard.tsx';
 import { Button } from '../components/Button/Button.tsx';
 
 export const BasketPage: React.FC = () => {
@@ -38,7 +38,6 @@ export const BasketPage: React.FC = () => {
             </div>
           </div>
         )}
-
       </div>
     </div>
   );
