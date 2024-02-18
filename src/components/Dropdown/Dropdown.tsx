@@ -6,7 +6,7 @@ type Props = {
   name: string;
   labelText: string;
   selectedValue: string;
-  width: string;
+  className?: string;
   isDisabled?: boolean;
   options: string[];
   onChange: (value: string | undefined) => void;
@@ -16,13 +16,13 @@ export const Dropdown: React.FC<Props> = ({
   name,
   labelText,
   selectedValue,
-  width,
+  className,
   isDisabled,
   options,
   onChange,
 }) => {
   return (
-    <div className={`w-[${width}]`}>
+    <div className={className}>
       <Select
         label={labelText}
         name={name}
