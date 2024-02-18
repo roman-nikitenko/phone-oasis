@@ -7,6 +7,7 @@ import { useAppDispatch } from 'hooks/hooks.ts';
 import { actions as basketActions } from 'store/basketSlice.ts';
 import { actions as phonesActions } from 'store/phonesSlice.ts';
 import { Link } from 'react-router-dom';
+import { IconButton } from 'components/IconButton/IconButton.tsx';
 
 type Props = {
   phone: Phones;
@@ -49,35 +50,23 @@ export const BasketCard: React.FC<Props> = ({ phone }) => {
         <img
           onClick={deleteItem}
           src={closeIcon}
-          className="cursor-pointer md:flex hidden"
+          className="cursor-pointer absolute top-[10px] right-[10px] md:static md:flex"
           alt="cancel"
         />
         <img src={image} className="w-[66px] h-[66px] lg:ml-[16px]" alt="phone" />
-        <p className="md:w-[295px]">
+        <p className="md:w-[295px] hover:text-Secondary">
           <Link to={`/detailPage/${id}`}>{title}</Link>
         </p>
-        <img
-          onClick={deleteItem}
-          src={closeIcon}
-          className="cursor-pointer absolute top-[10px] right-[10px] md:hidden"
-          alt="cancel"
-        />
       </div>
       <div className="flex items-center md:gap-[20px] lg:gap-[43px] justify-between">
         <div className="flex items-center justify-between w-[100px]">
-          <button
-            className="w-8 h-8 border border-Elements flex justify-center items-center"
+          <IconButton
+            iconSrc={minusIcon}
             onClick={() => quantityHandler(Options.MINUS)}
-          >
-            <img src={minusIcon} alt="button minus" />
-          </button>
+            isDisabled={quantity === 1}
+          />
           <p> {quantity} </p>
-          <button
-            className="w-8 h-8 border border-Elements flex justify-center items-center"
-            onClick={() => quantityHandler(Options.PLUS)}
-          >
-            <img src={plusIcon} alt="button minus" />
-          </button>
+          <IconButton iconSrc={plusIcon} onClick={() => quantityHandler(Options.PLUS)} />
         </div>
         <h2>${priceCount}</h2>
       </div>
