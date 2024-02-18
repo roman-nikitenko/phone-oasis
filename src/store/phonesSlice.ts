@@ -16,7 +16,15 @@ export const phonesSlice = createSlice({
     addToBasket: (state: Phones[], action: PayloadAction<number>): void => {
       state.map((phone: Phones): void => {
         if (phone.id === action.payload) {
-          phone.isInBasket = !phone.isInBasket;
+          phone.isInBasket = true;
+        }
+      });
+    },
+    // temporary solution
+    deleteFromBasket: (state: Phones[], action: PayloadAction<number>): void => {
+      state.map((phone: Phones): void => {
+        if (phone.id === action.payload) {
+          phone.isInBasket = false;
         }
       });
     },
