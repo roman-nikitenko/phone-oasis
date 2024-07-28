@@ -29,8 +29,8 @@ const TECH_SPECS_DATA = [
 
 export const AboutProduct: React.FC = () => {
   return (
-    <div className="flex justify-between">
-      <div className="max-w-[560px]">
+    <div className="flex flex-col-reverse gap-[60px] lg:flex-row lg:justify-between">
+      <div className="lg:max-w-[560px]">
         <Title titleText="About" />
         {ABOUT_PRODUCT_DATA.map((productInfo) => (
           <>
@@ -39,7 +39,7 @@ export const AboutProduct: React.FC = () => {
           </>
         ))}
       </div>
-      <div className="w-[512px]">
+      <div className="lg:w-[512px]">
         <Title titleText="Tech specs" />
         <div>
           {TECH_SPECS_DATA.map((data) => (

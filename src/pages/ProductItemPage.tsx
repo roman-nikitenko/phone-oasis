@@ -17,7 +17,7 @@ export const ProductItemPage: React.FC = () => {
   const navigation = useNavigate();
 
   return (
-    <div className="px-[152px] pt-[24px] pb-[80px] grid gap-[80px]">
+    <div className="px-[8px] py-[20px] md:px-[16px] lg:px-[40px] lg:py-[24px] xl:px-[152px] xl:pt-[24px] xl:pb-[80px] grid gap-[80px]">
       <div className="grid gap-[40px]">
         <PageNavigation />
         <div className="">
@@ -32,15 +32,13 @@ export const ProductItemPage: React.FC = () => {
           </div>
           <h1>{product.title}</h1>
         </div>
-        <div className="flex gap-[64px]">
+        <div className="grid lg:flex gap-[60px]">
           <ProductPhotos urls={urls} />
-          <div className="flex-1 flex">
-            <div className="flex-1 max-w-[320px]">
-              <ProductColors />
-              <ProductCapacity />
-              <ProductPrice product={product} />
-            </div>
-            <p className="text-Icons small-text">ID: {product.id}</p>
+          <div className="grid w-full xl:w-[400px]">
+            <p className="justify-self-end text-Icons small-text">ID: {product.id}</p>
+            <ProductColors />
+            <ProductCapacity />
+            <ProductPrice product={product} />
           </div>
         </div>
       </div>

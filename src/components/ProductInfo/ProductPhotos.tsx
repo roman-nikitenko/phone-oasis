@@ -8,8 +8,8 @@ type Props = {
 export const ProductPhotos: React.FC<Props> = ({ urls }) => {
   const [mainImageUrl, setMainImageUrl] = useState(urls[0]);
   return (
-    <div className="flex-1 grid gap-[16px] grid-flow-col auto-cols-max">
-      <div className="grid gap-[16px]">
+    <div className="flex-1 grid gap-[16px] grid-flow-row md:grid-flow-col auto-cols-max lg:max-w-[620px]">
+      <div className="flex order-1 md:-order-1 md:grid gap-[16px]">
         {urls.map((url: string) => (
           <button
             key={url}
