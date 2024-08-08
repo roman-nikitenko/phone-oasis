@@ -13,7 +13,13 @@ import { AboutProduct } from '../components/ProductInfo/AboutProduct.tsx';
 export const ProductItemPage: React.FC = () => {
   const product = useAppSelector((state) => state.phones[0]);
   const youMayAlsoLike = useAppSelector((state) => state.phones);
-  const urls = [product.image, product.image, product.image, product.image, product.image];
+  const urls = [
+    product.image,
+    'src/assets/sliderPhoto/image2.png',
+    'src/assets/sliderPhoto/image3.png',
+    'src/assets/sliderPhoto/image4.png',
+    'src/assets/sliderPhoto/image3.png',
+  ];
   const navigation = useNavigate();
 
   return (
