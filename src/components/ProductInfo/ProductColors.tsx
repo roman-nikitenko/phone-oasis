@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const ProductColors: React.FC = () => {
+  const [checkedValue, setCheckedValue] = useState('#FCDBC1');
   const handleChangeColor = (e: any): void => {
+    setCheckedValue(e.target.value);
     console.log(e.target);
   };
 
+  // TO DO: refactor, make array of objects, render inputs with map method
   return (
     <div className="pb-[24px] border-b border-b-Elements">
       <p className="pb-[8px] text-Icons small-text"> Available colors</p>
@@ -17,7 +20,7 @@ export const ProductColors: React.FC = () => {
             name="#FCDBC1"
             id="#FCDBC1"
             onChange={handleChangeColor}
-            checked
+            checked={checkedValue === '#FCDBC1'}
           />
         </label>
         <label htmlFor="#5F7170">
@@ -28,6 +31,7 @@ export const ProductColors: React.FC = () => {
             name="#5F7170"
             id="#5F7170"
             onChange={handleChangeColor}
+            checked={checkedValue === '#5F7170'}
           />
         </label>
         <label htmlFor="#4C4C4C">
@@ -38,6 +42,7 @@ export const ProductColors: React.FC = () => {
             name="#4C4C4C"
             id="#4C4C4C"
             onChange={handleChangeColor}
+            checked={checkedValue === '#4C4C4C'}
           />
         </label>
         <label htmlFor="#F0F0F0">
@@ -48,6 +53,7 @@ export const ProductColors: React.FC = () => {
             name="#F0F0F0"
             id="#F0F0F0"
             onChange={handleChangeColor}
+            checked={checkedValue === '#F0F0F0'}
           />
         </label>
       </div>
