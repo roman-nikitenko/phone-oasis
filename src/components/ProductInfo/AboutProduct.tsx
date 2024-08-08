@@ -32,18 +32,18 @@ export const AboutProduct: React.FC = () => {
     <div className="flex flex-col-reverse gap-[60px] lg:flex-row lg:justify-between">
       <div className="lg:max-w-[560px]">
         <Title titleText="About" />
-        {ABOUT_PRODUCT_DATA.map((productInfo) => (
-          <>
+        {ABOUT_PRODUCT_DATA.map((productInfo, index) => (
+          <div key={index}>
             <h3 className="mb-[16px] mt-[32px]">{productInfo.title}</h3>
             <p className="text-Secondary">{productInfo.text}</p>
-          </>
+          </div>
         ))}
       </div>
       <div className="lg:w-[512px]">
         <Title titleText="Tech specs" />
         <div>
           {TECH_SPECS_DATA.map((data) => (
-            <p className="flex justify-between mb-[8px]">
+            <p className="flex justify-between mb-[8px]" key={data.techspec}>
               <span className="text-Secondary">{data.techspec}</span>
               <span>{data.value}</span>
             </p>
