@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router';
 import { PageTitle } from 'components/PageTitle/PageTitle.tsx';
 import { PageNavigation } from 'components/PageNavigation/PageNavigation.tsx';
@@ -9,17 +9,24 @@ import { capitalizeFirstLetter } from 'utils/transformProductName.ts';
 import { Phones } from 'types/phones.ts';
 import { useAppSelector } from 'hooks/hooks.ts';
 import { ProductCategory } from 'types/common.ts';
+import { RootState } from 'store/store.ts';
+import { selectProductsByCategoryName } from 'store/productsSelector';
 
-export const ProductsPage: React.FC = () => {
-  const allProducts = useAppSelector((state) => state.phones);
+export const ProductsPage = () => {
+  const { pathname } = useLocation();
+  const paths: string[] = pathname.split('/');
+  const currentPath = paths[1];
+  const allProducts = useAppSelector(selectProductsByCategoryName(currentPath));
+  const searchedProducts = useAppSelector((state: RootState) => state.search);
   const [currentPage, setCurrentPage] = useState(1);
   const [numberProductsOnPage, setNumberProductsOnPage] = useState(16);
   const lastProductsIndex = currentPage * numberProductsOnPage;
   const firstProductsIndex = lastProductsIndex - numberProductsOnPage;
-  const products = allProducts.slice(firstProductsIndex, lastProductsIndex);
-  const { pathname } = useLocation();
-  const paths: string[] = pathname.split('/');
-  const currentPath = paths[1];
+  const products = allProducts
+    .filter((product: Phones) =>
+      product.title.toLocaleLowerCase().includes(searchedProducts.toLocaleLowerCase())
+    )
+    .slice(firstProductsIndex, lastProductsIndex);
 
   const pageNumbers: number[] = [];
 
@@ -28,6 +35,7 @@ export const ProductsPage: React.FC = () => {
   }
 
   const sortByDate = (value: string | undefined): void => {
+    // TO DO: Sort by date
     console.log(value);
   };
 

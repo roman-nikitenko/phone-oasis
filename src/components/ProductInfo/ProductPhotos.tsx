@@ -10,12 +10,12 @@ export const ProductPhotos: React.FC<Props> = ({ urls }) => {
 
   return (
     <div className="flex-1 grid gap-[16px] grid-flow-row md:grid-flow-col auto-cols-max lg:max-w-[620px]">
-      <div className="flex order-1 md:-order-1 md:grid gap-[16px]">
+      <div className="flex order-1 md:-order-1 md:grid gap-[16px] justify-center">
         {urls.map((_, index: number) => (
           <button
             key={index}
             className={classNames(
-              'w-[80px] h-[80px] flex justify-center items-center border border-Elements hover:border-Icons active:border-Primary',
+              'w-[75px] h-[75px] md:w-[80px] md:h-[80px] flex justify-center items-center border border-Elements hover:border-Icons active:border-Primary',
               mainImageIndex === index && 'border-Primary'
             )}
           >
