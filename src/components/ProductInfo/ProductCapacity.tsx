@@ -13,7 +13,6 @@ export const ProductCapacity: React.FC = () => {
           text="64 GB"
           className={classNames(
             'small-text capacity-Button',
-            // TO DO: fix active state of the button
             selectedCapacity !== '64 GB' ? 'not-Active-Capacity-Button' : 'active-Capacity-Button'
           )}
           isDisabled={false}
