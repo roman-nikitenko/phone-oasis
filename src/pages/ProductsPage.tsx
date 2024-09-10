@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router';
 import { PageTitle } from 'components/PageTitle/PageTitle.tsx';
 import { PageNavigation } from 'components/PageNavigation/PageNavigation.tsx';
@@ -9,25 +9,29 @@ import { capitalizeFirstLetter } from 'utils/transformProductName.ts';
 import { Phones } from 'types/phones.ts';
 import { useAppSelector } from 'hooks/hooks.ts';
 import { ProductCategory } from 'types/common.ts';
+import { RootState } from 'store/store.ts';
+import { selectProductsByCategoryName } from 'store/productsSelector';
 
-export const ProductsPage: React.FC = () => {
-  const allProducts = useAppSelector((state) => state.phones);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [numberProductsOnPage, setNumberProductsOnPage] = useState(16);
-  const lastProductsIndex = currentPage * numberProductsOnPage;
-  const firstProductsIndex = lastProductsIndex - numberProductsOnPage;
-  const products = allProducts.slice(firstProductsIndex, lastProductsIndex);
+export const ProductsPage = () => {
   const { pathname } = useLocation();
   const paths: string[] = pathname.split('/');
   const currentPath = paths[1];
+  const allProducts = useAppSelector(selectProductsByCategoryName(currentPath));
+  const searchedProducts = useAppSelector((state: RootState) => state.search);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [numberProductsOnPage, setNumberProductsOnPage] = useState(16);
+  const lastProductsIndex = (currentPage + 1) * numberProductsOnPage;
+  const firstProductsIndex = lastProductsIndex - numberProductsOnPage;
+  const products = allProducts
+    .filter((product: Phones) =>
+      product.title.toLocaleLowerCase().includes(searchedProducts.toLocaleLowerCase())
+    )
+    .slice(firstProductsIndex, lastProductsIndex);
 
-  const pageNumbers: number[] = [];
-
-  for (let i = 1; i <= Math.ceil(allProducts.length / numberProductsOnPage); i++) {
-    pageNumbers.push(i);
-  }
+  const [pageNumbers, setPageNumbers] = useState<number[]>([]);
 
   const sortByDate = (value: string | undefined): void => {
+    // TO DO: Sort by date
     console.log(value);
   };
 
@@ -64,7 +68,7 @@ export const ProductsPage: React.FC = () => {
             selectedValue={numberProductsOnPage.toString()}
             options={['16', '32']}
             onChange={sortByAmount}
-            isDisabled={currentPage === pageNumbers.length}
+            isDisabled={currentPage + 1 === pageNumbers.length}
           />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-[16px] lg:gap-y-[40px]">
@@ -74,7 +78,10 @@ export const ProductsPage: React.FC = () => {
         </div>
       </div>
       <Pagination
+        totalAmountOfProducts={products.length}
+        numberProductsOnPage={numberProductsOnPage}
         pageNumbers={pageNumbers}
+        setPageNumbers={setPageNumbers}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />

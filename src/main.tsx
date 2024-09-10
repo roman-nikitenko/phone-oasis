@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 import { createHashRouter } from 'react-router-dom';
 import { ThemeProvider } from '@material-tailwind/react';
+import { Provider } from 'react-redux';
 import App from './App.tsx';
 import { HomePage } from 'pages/HomePage.tsx';
 import { ErrorPage } from 'pages/ErrorPage.tsx';
@@ -13,9 +14,8 @@ import { BasketPage } from 'pages/BasketPage.tsx';
 import { ContactsPage } from 'pages/ContactsPage.tsx';
 import { GithubPage } from 'pages/GithubPage.tsx';
 import { RightsPage } from 'pages/RightsPage.tsx';
-import './index.css';
-import { Provider } from 'react-redux';
 import { store } from './store/store.ts';
+import './index.css';
 
 const router = createHashRouter([
   {

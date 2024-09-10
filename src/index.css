@@ -89,3 +89,15 @@
 .active-Pagination-Button {
   @apply hover:!text-White hover:!bg-Primary hover:cursor-auto active:!border-Primary
 }
+
+.capacity-Button {
+  @apply h-[32px] font-medium
+}
+
+.not-Active-Capacity-Button {
+  @apply text-Primary border-Icons bg-White hover:border-Primary
+}
+
+.active-Capacity-Button {
+  @apply text-White bg-Primary border-Primary
+}
