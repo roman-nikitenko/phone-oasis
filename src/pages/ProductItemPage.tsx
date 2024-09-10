@@ -9,17 +9,14 @@ import { ProductColors } from 'components/ProductInfo/ProductColors.tsx';
 import { ProductCapacity } from 'components/ProductInfo/ProductCapacity.tsx';
 import { ProductPrice } from 'components/ProductInfo/ProductPrice.tsx';
 import { AboutProduct } from '../components/ProductInfo/AboutProduct.tsx';
+import ProductImage2 from 'assets/sliderPhoto/image2.png';
+import ProductImage3 from 'assets/sliderPhoto/image3.png';
+import ProductImage4 from 'assets/sliderPhoto/image4.png';
 
 export const ProductItemPage: React.FC = () => {
   const product = useAppSelector((state) => state.phones[0]);
   const youMayAlsoLike = useAppSelector((state) => state.phones);
-  const urls = [
-    product.image,
-    'src/assets/sliderPhoto/image2.png',
-    'src/assets/sliderPhoto/image3.png',
-    'src/assets/sliderPhoto/image4.png',
-    'src/assets/sliderPhoto/image3.png',
-  ];
+  const urls = [product.image, ProductImage2, ProductImage3, ProductImage4, ProductImage3];
   const navigation = useNavigate();
 
   return (
